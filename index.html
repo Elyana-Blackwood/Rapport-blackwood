@@ -469,6 +469,60 @@ h1{
 .question-contenu input::placeholder{
     color:#53606c;
 }
+/* BOUTON TRANSMISSION */
+
+.transmission-rapport{
+    margin-top:85px;
+    padding:55px 0 50px;
+    text-align:center;
+}
+
+.transmission-ligne{
+    width:55px;
+    height:1px;
+    background:#bda36a;
+    margin:0 auto 30px;
+}
+
+.transmission-titre{
+    font-family:Georgia,"Times New Roman",serif;
+    color:#cbb47c;
+    font-size:12px;
+    letter-spacing:4px;
+    margin-bottom:20px;
+}
+
+.transmission-rapport p{
+    max-width:520px;
+    margin:0 auto 35px;
+    color:#7f8c98;
+    font-size:13px;
+    line-height:1.7;
+}
+
+.bouton-transmettre{
+    padding:18px 42px;
+    border:1px solid #bda36a;
+    background:rgba(8,18,29,.65);
+    color:#d2bd88;
+    font-size:11px;
+    letter-spacing:3px;
+    cursor:pointer;
+    transition:.4s;
+}
+
+.bouton-transmettre:hover{
+    background:#bda36a;
+    color:#07101b;
+    box-shadow:0 0 40px rgba(189,163,106,.25);
+}
+
+.transmission-securisee{
+    margin-top:25px;
+    color:#46535f;
+    font-size:8px;
+    letter-spacing:3px;
+}
 </style>
 
 </head>
@@ -555,7 +609,100 @@ h1{
             </div>
 
         </div>
+<!-- QUESTION 02 -->
 
+<div class="question-bloc">
+
+    <div class="numero-question">02</div>
+
+    <div class="question-contenu">
+
+        <label>VOTRE ACCUSATION</label>
+
+        <p>
+            Selon vous, qui est le meurtrier ?
+        </p>
+
+        <input
+            type="text"
+            id="meurtrier"
+            placeholder="Nom du suspect"
+            autocomplete="off"
+        >
+
+    </div>
+
+</div>
+<!-- QUESTION 03 -->
+
+<div class="question-bloc">
+
+    <div class="numero-question">03</div>
+
+    <div class="question-contenu">
+
+        <label>LA DÉCOUVERTE D'ETHAN</label>
+
+        <p>
+            Qu'est-ce qu'Ethan avait découvert ?
+        </p>
+
+        <textarea
+            id="decouverteEthan"
+            placeholder="Votre réponse..."
+            rows="4"
+        ></textarea>
+
+    </div>
+
+</div>
+
+<!-- QUESTION 04 -->
+
+<div class="question-bloc">
+
+    <div class="numero-question">04</div>
+
+    <div class="question-contenu">
+
+        <label>LA PREUVE</label>
+
+        <p>
+            Quelle preuve condamne votre suspect ?
+        </p>
+
+        <textarea
+            id="preuve"
+            placeholder="Votre réponse..."
+            rows="4"
+        ></textarea>
+
+    </div>
+
+</div>
+<!-- TRANSMISSION DU RAPPORT -->
+
+<div class="transmission-rapport">
+
+    <div class="transmission-ligne"></div>
+
+    <div class="transmission-titre">
+        VOS CONCLUSIONS SONT PRÊTES
+    </div>
+
+    <p>
+        Vérifiez vos réponses avant de transmettre votre rapport au Directeur des Admissions.
+    </p>
+
+    <button class="bouton-transmettre">
+        TRANSMETTRE LE RAPPORT
+    </button>
+
+    <div class="transmission-securisee">
+        TRANSMISSION SÉCURISÉE · BLACKWOOD ACADEMY
+    </div>
+
+</div>
     </div>
 
 </section>

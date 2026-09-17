@@ -177,7 +177,134 @@ h1{
         transform:scale(1);
     }
 }
+/* =========================
+   TRANSITION BLACKWOOD
+========================= */
 
+.transition{
+    position:fixed;
+    inset:0;
+
+    background:
+        radial-gradient(circle at center, #122335 0%, #07101b 60%, #03070c 100%);
+
+    z-index:100;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:
+        opacity .8s ease,
+        visibility .8s;
+}
+
+.transition.active{
+    opacity:1;
+    visibility:visible;
+}
+
+.transition-content{
+    text-align:center;
+    width:420px;
+}
+
+.mini-emblem{
+    width:65px;
+    height:65px;
+
+    margin:0 auto 45px;
+
+    border:1px solid #bda36a;
+
+    transform:rotate(45deg);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    box-shadow:0 0 35px rgba(189,163,106,.15);
+}
+
+.mini-emblem span{
+    transform:rotate(-45deg);
+
+    font-family:Georgia,serif;
+    font-size:28px;
+
+    color:#cbb47c;
+}
+
+.system-message{
+    min-height:25px;
+
+    font-size:11px;
+    letter-spacing:4px;
+
+    color:#9ba8b4;
+
+    transition:.5s;
+}
+
+.system-message.accepted{
+    color:#d4bd83;
+
+    text-shadow:0 0 15px rgba(212,189,131,.35);
+}
+
+.loading-line{
+    width:100%;
+    height:1px;
+
+    background:rgba(189,163,106,.15);
+
+    margin-top:28px;
+
+    overflow:hidden;
+}
+
+.loading-progress{
+    height:100%;
+    width:0;
+
+    background:#bda36a;
+}
+
+.transition.active .loading-progress{
+    animation:chargement 5.2s ease forwards;
+}
+
+@keyframes chargement{
+
+    0%{
+        width:0;
+    }
+
+    35%{
+        width:34%;
+    }
+
+    65%{
+        width:72%;
+    }
+
+    100%{
+        width:100%;
+    }
+
+}
+
+.security-code{
+    margin-top:20px;
+
+    font-size:8px;
+    letter-spacing:3px;
+
+    color:#44515d;
+}
 </style>
 
 </head>
@@ -204,16 +331,80 @@ h1{
         Bureau du Directeur des Admissions
     </div>
 
-    <button class="enter">
-        ACCÉDER AU DOSSIER
-    </button>
+  <button class="enter" onclick="accederDossier()">
+    ACCÉDER AU DOSSIER
+  </button>
 
     <div class="confidential">
         ACCÈS CONFIDENTIEL · BLACKWOOD ACADEMY
     </div>
 
 </main>
+<!-- ÉCRAN DE TRANSITION -->
 
+<div id="transition" class="transition">
+
+    <div class="transition-content">
+
+        <div class="mini-emblem">
+            <span>B</span>
+        </div>
+
+        <div id="messageTransition" class="system-message">
+            AUTHENTIFICATION...
+        </div>
+
+        <div class="loading-line">
+            <div class="loading-progress"></div>
+        </div>
+
+        <div class="security-code">
+            BLACKWOOD SECURE NETWORK
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+function accederDossier(){
+
+    const transition = document.getElementById("transition");
+    const message = document.getElementById("messageTransition");
+
+    transition.classList.add("active");
+
+    setTimeout(function(){
+        message.innerHTML = "VÉRIFICATION DES AUTORISATIONS...";
+    }, 1500);
+
+    setTimeout(function(){
+        message.innerHTML = "ACCÈS AUTORISÉ";
+        message.classList.add("accepted");
+    }, 3200);
+
+    setTimeout(function(){
+        message.innerHTML = "OUVERTURE DU DOSSIER...";
+    }, 4400);
+
+    setTimeout(function(){
+
+        /*
+        PLUS TARD :
+        c'est ici que nous ouvrirons
+        le rapport d'enquête.
+        */
+
+        transition.classList.remove("active");
+        message.innerHTML = "AUTHENTIFICATION...";
+        message.classList.remove("accepted");
+
+    }, 5600);
+
+}
+
+</script>
 </body>
 
 </html>

@@ -177,6 +177,61 @@ h1{
         transform:scale(1);
     }
 }
+    <!-- RAPPORT D'ENQUÊTE -->
+
+<section id="rapport" class="rapport">
+
+    <div class="rapport-header">
+
+        <div class="rapport-marque">
+            BLACKWOOD ACADEMY
+        </div>
+
+        <div class="rapport-confidentiel">
+            CONFIDENTIEL
+        </div>
+
+    </div>
+
+    <div class="rapport-contenu">
+
+        <div class="rapport-reference">
+            BUREAU DU DIRECTEUR DES ADMISSIONS · DOSSIER FINAL
+        </div>
+
+        <h2>Rapport d'enquête</h2>
+
+        <div class="trait-or"></div>
+
+        <p class="rapport-intro">
+            Votre enquête est arrivée à son terme.
+            Le Directeur attend désormais vos conclusions.
+        </p>
+
+        <div class="question-bloc">
+
+            <div class="numero-question">01</div>
+
+            <div class="question-contenu">
+                <label>IDENTIFICATION DE L'ÉQUIPE</label>
+
+                <p>
+                    Indiquez le nom sous lequel votre équipe souhaite transmettre son rapport.
+                </p>
+
+                <input
+                    type="text"
+                    id="nomEquipe"
+                    placeholder="Nom de l'équipe"
+                    autocomplete="off"
+                >
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
 /* =========================
    TRANSITION BLACKWOOD
 ========================= */
@@ -305,6 +360,169 @@ h1{
 
     color:#44515d;
 }
+/* =========================
+   RAPPORT D'ENQUÊTE
+========================= */
+
+.rapport{
+    position:fixed;
+    inset:0;
+    z-index:20;
+
+    background:
+        radial-gradient(circle at 80% 20%, rgba(189,163,106,.08), transparent 30%),
+        linear-gradient(135deg,#07101b,#101d2b 55%,#060b12);
+
+    display:none;
+    overflow-y:auto;
+
+    color:white;
+}
+
+.rapport.visible{
+    display:block;
+    animation:ouvrirRapport 1.2s ease both;
+}
+
+@keyframes ouvrirRapport{
+    from{
+        opacity:0;
+        transform:scale(.985);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+.rapport-header{
+    height:76px;
+
+    border-bottom:1px solid rgba(189,163,106,.25);
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 7vw;
+}
+
+.rapport-marque{
+    font-family:Georgia,serif;
+    letter-spacing:5px;
+    font-size:13px;
+    color:#cbb47c;
+}
+
+.rapport-confidentiel{
+    border:1px solid rgba(189,163,106,.45);
+    padding:8px 14px;
+
+    font-size:8px;
+    letter-spacing:3px;
+    color:#bda36a;
+}
+
+.rapport-contenu{
+    width:min(900px,86vw);
+    margin:75px auto 120px;
+}
+
+.rapport-reference{
+    color:#687786;
+    font-size:9px;
+    letter-spacing:4px;
+    margin-bottom:22px;
+}
+
+.rapport h2{
+    font-family:Georgia,"Times New Roman",serif;
+    font-weight:normal;
+
+    font-size:48px;
+    letter-spacing:4px;
+
+    margin-bottom:22px;
+}
+
+.trait-or{
+    width:70px;
+    height:1px;
+    background:#bda36a;
+    margin-bottom:30px;
+}
+
+.rapport-intro{
+    max-width:600px;
+
+    color:#9ba8b4;
+    line-height:1.8;
+    font-size:15px;
+
+    margin-bottom:65px;
+}
+
+.question-bloc{
+    position:relative;
+
+    display:grid;
+    grid-template-columns:80px 1fr;
+
+    padding:35px 0;
+
+    border-top:1px solid rgba(189,163,106,.18);
+    border-bottom:1px solid rgba(189,163,106,.18);
+}
+
+.numero-question{
+    font-family:Georgia,serif;
+    font-size:32px;
+    color:rgba(189,163,106,.45);
+}
+
+.question-contenu label{
+    display:block;
+
+    color:#d0b97e;
+    letter-spacing:3px;
+    font-size:11px;
+
+    margin-bottom:15px;
+}
+
+.question-contenu p{
+    color:#9ba8b4;
+    font-size:14px;
+    margin-bottom:25px;
+}
+
+.question-contenu input{
+    width:100%;
+
+    padding:17px 18px;
+
+    border:1px solid rgba(189,163,106,.28);
+    outline:none;
+
+    background:rgba(3,10,17,.35);
+
+    color:white;
+    font-size:15px;
+
+    transition:.3s;
+}
+
+.question-contenu input:focus{
+    border-color:#bda36a;
+
+    box-shadow:
+        0 0 25px rgba(189,163,106,.08);
+}
+
+.question-contenu input::placeholder{
+    color:#53606c;
+}
 </style>
 
 </head>
@@ -390,17 +608,13 @@ function accederDossier(){
 
     setTimeout(function(){
 
-        /*
-        PLUS TARD :
-        c'est ici que nous ouvrirons
-        le rapport d'enquête.
-        */
+    transition.classList.remove("active");
 
-        transition.classList.remove("active");
-        message.innerHTML = "AUTHENTIFICATION...";
-        message.classList.remove("accepted");
+    document.querySelector(".portal").style.display = "none";
 
-    }, 5600);
+    document.getElementById("rapport").classList.add("visible");
+
+}, 5600);
 
 }
 

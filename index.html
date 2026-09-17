@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Blackwood Academy — Portail confidentiel</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    width:100vw;
+    height:100vh;
+    overflow:hidden;
+    background:#07101b;
+    font-family:"Segoe UI",Arial,sans-serif;
+    color:white;
+}
+
+/* FOND */
+
+.background{
+    position:fixed;
+    inset:0;
+    background:
+        radial-gradient(circle at 70% 30%, rgba(181,140,65,.12), transparent 35%),
+        radial-gradient(circle at 20% 80%, rgba(29,55,80,.35), transparent 40%),
+        linear-gradient(135deg,#07101b,#101d2b 55%,#060b12);
+}
+
+/* LIGNES DÉCORATIVES */
+
+.background::after{
+    content:"";
+    position:absolute;
+    inset:25px;
+    border:1px solid rgba(201,166,92,.22);
+    pointer-events:none;
+}
+
+/* CONTENU CENTRAL */
+
+.portal{
+    position:relative;
+    z-index:2;
+    height:100vh;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+}
+
+/* PETIT EMBLÈME */
+
+.emblem{
+    width:92px;
+    height:92px;
+
+    border:1px solid #bda36a;
+    transform:rotate(45deg);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    margin-bottom:45px;
+
+    box-shadow:
+        0 0 35px rgba(189,163,106,.12),
+        inset 0 0 20px rgba(189,163,106,.06);
+}
+
+.emblem span{
+    transform:rotate(-45deg);
+    font-family:Georgia,serif;
+    font-size:38px;
+    color:#cbb47c;
+}
+
+/* BLACKWOOD */
+
+.academy{
+    font-family:Georgia,"Times New Roman",serif;
+    font-size:13px;
+    letter-spacing:7px;
+    color:#bda36a;
+    margin-bottom:15px;
+}
+
+h1{
+    font-family:Georgia,"Times New Roman",serif;
+    font-weight:normal;
+    font-size:54px;
+    letter-spacing:8px;
+    margin-bottom:15px;
+}
+
+.separator{
+    width:90px;
+    height:1px;
+    background:#bda36a;
+    margin:15px auto 28px;
+}
+
+/* SOUS-TITRE */
+
+.subtitle{
+    font-size:12px;
+    letter-spacing:4px;
+    color:#9ba8b4;
+    text-transform:uppercase;
+    margin-bottom:55px;
+}
+
+/* BOUTON */
+
+.enter{
+    padding:16px 38px;
+
+    border:1px solid #bda36a;
+    background:rgba(8,18,29,.7);
+
+    color:#d2bd88;
+
+    font-size:11px;
+    letter-spacing:3px;
+
+    cursor:pointer;
+
+    transition:.4s;
+}
+
+.enter:hover{
+    background:#bda36a;
+    color:#07101b;
+
+    box-shadow:
+        0 0 35px rgba(189,163,106,.25);
+}
+
+/* CONFIDENTIEL */
+
+.confidential{
+    position:absolute;
+    bottom:55px;
+
+    font-size:9px;
+    letter-spacing:3px;
+    color:#53606c;
+}
+
+/* APPARITION */
+
+.portal{
+    animation:apparition 1.8s ease;
+}
+
+@keyframes apparition{
+
+    from{
+        opacity:0;
+        transform:scale(.98);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="background"></div>
+
+<main class="portal">
+
+    <div class="emblem">
+        <span>B</span>
+    </div>
+
+    <div class="academy">
+        BLACKWOOD ACADEMY
+    </div>
+
+    <h1>RAPPORT FINAL</h1>
+
+    <div class="separator"></div>
+
+    <div class="subtitle">
+        Bureau du Directeur des Admissions
+    </div>
+
+    <button class="enter">
+        ACCÉDER AU DOSSIER
+    </button>
+
+    <div class="confidential">
+        ACCÈS CONFIDENTIEL · BLACKWOOD ACADEMY
+    </div>
+
+</main>
+
+</body>
+
+</html>

@@ -555,6 +555,98 @@ h1{
 .question-contenu textarea::placeholder{
     color:#53606c;
 }
+/* =========================
+   TRANSMISSION DU RAPPORT
+========================= */
+
+.ecran-transmission{
+    position:fixed;
+    inset:0;
+    z-index:500;
+
+    background:
+        radial-gradient(circle at center, #122335 0%, #07101b 58%, #03070c 100%);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:opacity .7s ease, visibility .7s;
+}
+
+.ecran-transmission.visible{
+    opacity:1;
+    visibility:visible;
+}
+
+.transmission-centre{
+    width:min(500px,80vw);
+    text-align:center;
+}
+
+.transmission-emblem{
+    margin-bottom:42px;
+}
+
+.transmission-reference{
+    font-size:8px;
+    letter-spacing:4px;
+    color:#52606d;
+    margin-bottom:22px;
+}
+
+.texte-transmission{
+    min-height:30px;
+
+    font-family:Georgia,"Times New Roman",serif;
+    font-size:18px;
+    letter-spacing:3px;
+
+    color:#d1bb82;
+}
+
+.barre-transmission{
+    width:100%;
+    height:1px;
+
+    margin:30px 0 18px;
+
+    background:rgba(189,163,106,.18);
+
+    overflow:hidden;
+}
+
+.progression-transmission{
+    width:0;
+    height:100%;
+
+    background:#bda36a;
+
+    box-shadow:0 0 18px rgba(189,163,106,.45);
+}
+
+.ecran-transmission.visible .progression-transmission{
+    animation:progressionRapport 5s ease forwards;
+}
+
+@keyframes progressionRapport{
+
+    0%{width:0;}
+    25%{width:20%;}
+    55%{width:52%;}
+    78%{width:78%;}
+    100%{width:100%;}
+
+}
+
+.detail-transmission{
+    font-size:9px;
+    letter-spacing:2px;
+    color:#65727e;
+}
 </style>
 
 </head>
@@ -764,6 +856,36 @@ h1{
 
 </div>
 
+<!-- TRANSMISSION DU RAPPORT -->
+
+<div id="ecranTransmission" class="ecran-transmission">
+
+    <div class="transmission-centre">
+
+        <div class="mini-emblem transmission-emblem">
+            <span>B</span>
+        </div>
+
+        <div class="transmission-reference">
+            BLACKWOOD ACADEMY · SECURE NETWORK
+        </div>
+
+        <div id="texteTransmission" class="texte-transmission">
+            TRANSMISSION DU RAPPORT...
+        </div>
+
+        <div class="barre-transmission">
+            <div id="progressionTransmission" class="progression-transmission"></div>
+        </div>
+
+        <div id="detailTransmission" class="detail-transmission">
+            Établissement de la connexion sécurisée
+        </div>
+
+    </div>
+
+</div>
+
 <script>
 
 function accederDossier(){
@@ -795,6 +917,37 @@ function accederDossier(){
     document.getElementById("rapport").classList.add("visible");
 
 }, 5600);
+
+}
+function transmettreRapport(){
+
+    const ecran = document.getElementById("ecranTransmission");
+    const texte = document.getElementById("texteTransmission");
+    const detail = document.getElementById("detailTransmission");
+    const progression = document.getElementById("progressionTransmission");
+
+    progression.style.animation = "none";
+    progression.offsetHeight;
+    progression.style.animation = "";
+
+    ecran.classList.add("visible");
+
+    texte.innerHTML = "TRANSMISSION DU RAPPORT...";
+    detail.innerHTML = "Établissement de la connexion sécurisée";
+
+    setTimeout(function(){
+        detail.innerHTML = "Envoi des conclusions au Bureau du Directeur";
+    },1400);
+
+    setTimeout(function(){
+        texte.innerHTML = "RAPPORT REÇU";
+        detail.innerHTML = "Vérification de l'accusation...";
+    },3000);
+
+    setTimeout(function(){
+        texte.innerHTML = "ANALYSE EN COURS...";
+        detail.innerHTML = "BLACKWOOD ACADEMY · DOSSIER CONFIDENTIEL";
+    },4300);
 
 }
 

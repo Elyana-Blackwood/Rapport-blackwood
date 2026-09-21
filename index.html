@@ -2,12 +2,17 @@
 <html lang="fr">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Blackwood Academy — Portail confidentiel</title>
 
 <style>
+
+/* =========================================
+   BASE
+========================================= */
 
 *{
     margin:0;
@@ -19,151 +24,69 @@ body{
     width:100vw;
     height:100vh;
     overflow:hidden;
+
     background:#07101b;
+
     font-family:"Segoe UI",Arial,sans-serif;
+
     color:white;
 }
 
-/* FOND */
+
+/* =========================================
+   FOND BLACKWOOD
+========================================= */
 
 .background{
+
     position:fixed;
     inset:0;
+
     background:
         radial-gradient(circle at 70% 30%, rgba(181,140,65,.12), transparent 35%),
         radial-gradient(circle at 20% 80%, rgba(29,55,80,.35), transparent 40%),
         linear-gradient(135deg,#07101b,#101d2b 55%,#060b12);
-}
 
-/* LIGNES DÉCORATIVES */
+}
 
 .background::after{
+
     content:"";
+
     position:absolute;
     inset:25px;
+
     border:1px solid rgba(201,166,92,.22);
+
     pointer-events:none;
+
 }
 
-/* CONTENU CENTRAL */
+
+/* =========================================
+   PAGE D'ACCUEIL
+========================================= */
 
 .portal{
+
     position:relative;
+
     z-index:2;
+
     height:100vh;
 
     display:flex;
     flex-direction:column;
+
     justify-content:center;
     align-items:center;
 
     text-align:center;
-}
 
-/* PETIT EMBLÈME */
-
-.emblem{
-    width:92px;
-    height:92px;
-
-    border:1px solid #bda36a;
-    transform:rotate(45deg);
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    margin-bottom:45px;
-
-    box-shadow:
-        0 0 35px rgba(189,163,106,.12),
-        inset 0 0 20px rgba(189,163,106,.06);
-}
-
-.emblem span{
-    transform:rotate(-45deg);
-    font-family:Georgia,serif;
-    font-size:38px;
-    color:#cbb47c;
-}
-
-/* BLACKWOOD */
-
-.academy{
-    font-family:Georgia,"Times New Roman",serif;
-    font-size:13px;
-    letter-spacing:7px;
-    color:#bda36a;
-    margin-bottom:15px;
-}
-
-h1{
-    font-family:Georgia,"Times New Roman",serif;
-    font-weight:normal;
-    font-size:54px;
-    letter-spacing:8px;
-    margin-bottom:15px;
-}
-
-.separator{
-    width:90px;
-    height:1px;
-    background:#bda36a;
-    margin:15px auto 28px;
-}
-
-/* SOUS-TITRE */
-
-.subtitle{
-    font-size:12px;
-    letter-spacing:4px;
-    color:#9ba8b4;
-    text-transform:uppercase;
-    margin-bottom:55px;
-}
-
-/* BOUTON */
-
-.enter{
-    padding:16px 38px;
-
-    border:1px solid #bda36a;
-    background:rgba(8,18,29,.7);
-
-    color:#d2bd88;
-
-    font-size:11px;
-    letter-spacing:3px;
-
-    cursor:pointer;
-
-    transition:.4s;
-}
-
-.enter:hover{
-    background:#bda36a;
-    color:#07101b;
-
-    box-shadow:
-        0 0 35px rgba(189,163,106,.25);
-}
-
-/* CONFIDENTIEL */
-
-.confidential{
-    position:absolute;
-    bottom:55px;
-
-    font-size:9px;
-    letter-spacing:3px;
-    color:#53606c;
-}
-
-/* APPARITION */
-
-.portal{
     animation:apparition 1.8s ease;
+
 }
+
 
 @keyframes apparition{
 
@@ -176,44 +99,204 @@ h1{
         opacity:1;
         transform:scale(1);
     }
+
 }
-  
-/* =========================
-   TRANSITION BLACKWOOD
-========================= */
+
+
+/* EMBLÈME */
+
+.emblem{
+
+    width:92px;
+    height:92px;
+
+    border:1px solid #bda36a;
+
+    transform:rotate(45deg);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    margin-bottom:45px;
+
+    box-shadow:
+        0 0 35px rgba(189,163,106,.12),
+        inset 0 0 20px rgba(189,163,106,.06);
+
+}
+
+.emblem span{
+
+    transform:rotate(-45deg);
+
+    font-family:Georgia,serif;
+
+    font-size:38px;
+
+    color:#cbb47c;
+
+}
+
+
+.academy{
+
+    font-family:Georgia,"Times New Roman",serif;
+
+    font-size:13px;
+
+    letter-spacing:7px;
+
+    color:#bda36a;
+
+    margin-bottom:15px;
+
+}
+
+
+h1{
+
+    font-family:Georgia,"Times New Roman",serif;
+
+    font-weight:normal;
+
+    font-size:54px;
+
+    letter-spacing:8px;
+
+    margin-bottom:15px;
+
+}
+
+
+.separator{
+
+    width:90px;
+    height:1px;
+
+    background:#bda36a;
+
+    margin:15px auto 28px;
+
+}
+
+
+.subtitle{
+
+    font-size:12px;
+
+    letter-spacing:4px;
+
+    color:#9ba8b4;
+
+    text-transform:uppercase;
+
+    margin-bottom:55px;
+
+}
+
+
+.enter{
+
+    padding:16px 38px;
+
+    border:1px solid #bda36a;
+
+    background:rgba(8,18,29,.7);
+
+    color:#d2bd88;
+
+    font-size:11px;
+
+    letter-spacing:3px;
+
+    cursor:pointer;
+
+    transition:.4s;
+
+}
+
+
+.enter:hover{
+
+    background:#bda36a;
+
+    color:#07101b;
+
+    box-shadow:
+        0 0 35px rgba(189,163,106,.25);
+
+}
+
+
+.confidential{
+
+    position:absolute;
+
+    bottom:55px;
+
+    font-size:9px;
+
+    letter-spacing:3px;
+
+    color:#53606c;
+
+}
+
+
+/* =========================================
+   AUTHENTIFICATION
+========================================= */
 
 .transition{
-    position:fixed;
-    inset:0;
 
-    background:
-        radial-gradient(circle at center, #122335 0%, #07101b 60%, #03070c 100%);
+    position:fixed;
+
+    inset:0;
 
     z-index:100;
 
+    background:
+        radial-gradient(circle at center,#122335 0%,#07101b 60%,#03070c 100%);
+
     display:flex;
-    justify-content:center;
+
     align-items:center;
+    justify-content:center;
 
     opacity:0;
+
     visibility:hidden;
 
     transition:
         opacity .8s ease,
         visibility .8s;
+
 }
+
 
 .transition.active{
+
     opacity:1;
+
     visibility:visible;
+
 }
+
 
 .transition-content{
-    text-align:center;
+
     width:420px;
+
+    max-width:80vw;
+
+    text-align:center;
+
 }
 
+
 .mini-emblem{
+
     width:65px;
     height:65px;
 
@@ -224,113 +307,149 @@ h1{
     transform:rotate(45deg);
 
     display:flex;
+
     align-items:center;
     justify-content:center;
 
-    box-shadow:0 0 35px rgba(189,163,106,.15);
+    box-shadow:
+        0 0 35px rgba(189,163,106,.15);
+
 }
 
+
 .mini-emblem span{
+
     transform:rotate(-45deg);
 
     font-family:Georgia,serif;
+
     font-size:28px;
 
     color:#cbb47c;
+
 }
 
+
 .system-message{
+
     min-height:25px;
 
     font-size:11px;
+
     letter-spacing:4px;
 
     color:#9ba8b4;
 
     transition:.5s;
+
 }
+
 
 .system-message.accepted{
+
     color:#d4bd83;
 
-    text-shadow:0 0 15px rgba(212,189,131,.35);
+    text-shadow:
+        0 0 15px rgba(212,189,131,.35);
+
 }
 
-.loading-line{
-    width:100%;
-    height:1px;
 
-    background:rgba(189,163,106,.15);
+.loading-line{
+
+    width:100%;
+
+    height:1px;
 
     margin-top:28px;
 
+    background:rgba(189,163,106,.15);
+
     overflow:hidden;
+
 }
+
 
 .loading-progress{
-    height:100%;
+
     width:0;
 
+    height:100%;
+
     background:#bda36a;
+
 }
 
+
 .transition.active .loading-progress{
+
     animation:chargement 5.2s ease forwards;
+
 }
+
 
 @keyframes chargement{
 
-    0%{
-        width:0;
-    }
+    0%{width:0;}
 
-    35%{
-        width:34%;
-    }
+    35%{width:34%;}
 
-    65%{
-        width:72%;
-    }
+    65%{width:72%;}
 
-    100%{
-        width:100%;
-    }
+    100%{width:100%;}
 
 }
 
+
 .security-code{
+
     margin-top:20px;
 
     font-size:8px;
+
     letter-spacing:3px;
 
     color:#44515d;
+
 }
-/* =========================
-   RAPPORT D'ENQUÊTE
-========================= */
+
+
+/* =========================================
+   RAPPORT
+========================================= */
 
 .rapport{
+
     position:fixed;
+
     inset:0;
+
     z-index:20;
+
+    display:none;
+
+    overflow-y:auto;
+
+    color:white;
 
     background:
         radial-gradient(circle at 80% 20%, rgba(189,163,106,.08), transparent 30%),
         linear-gradient(135deg,#07101b,#101d2b 55%,#060b12);
 
-    display:none;
-    overflow-y:auto;
-
-    color:white;
 }
+
 
 .rapport.visible{
+
     display:block;
+
     animation:ouvrirRapport 1.2s ease both;
+
 }
 
+
 @keyframes ouvrirRapport{
+
     from{
         opacity:0;
         transform:scale(.985);
@@ -340,198 +459,188 @@ h1{
         opacity:1;
         transform:scale(1);
     }
+
 }
 
+
 .rapport-header{
+
     height:76px;
 
     border-bottom:1px solid rgba(189,163,106,.25);
 
     display:flex;
+
     align-items:center;
     justify-content:space-between;
 
     padding:0 7vw;
+
 }
+
 
 .rapport-marque{
+
     font-family:Georgia,serif;
+
     letter-spacing:5px;
+
     font-size:13px;
+
     color:#cbb47c;
+
 }
 
+
 .rapport-confidentiel{
+
     border:1px solid rgba(189,163,106,.45);
+
     padding:8px 14px;
 
     font-size:8px;
+
     letter-spacing:3px;
+
     color:#bda36a;
+
 }
+
 
 .rapport-contenu{
+
     width:min(900px,86vw);
+
     margin:75px auto 120px;
+
 }
+
 
 .rapport-reference{
+
     color:#687786;
+
     font-size:9px;
+
     letter-spacing:4px;
+
     margin-bottom:22px;
+
 }
 
+
 .rapport h2{
+
     font-family:Georgia,"Times New Roman",serif;
+
     font-weight:normal;
 
     font-size:48px;
+
     letter-spacing:4px;
 
     margin-bottom:22px;
+
 }
+
 
 .trait-or{
+
     width:70px;
     height:1px;
+
     background:#bda36a;
+
     margin-bottom:30px;
+
 }
 
+
 .rapport-intro{
+
     max-width:600px;
 
     color:#9ba8b4;
+
     line-height:1.8;
+
     font-size:15px;
 
     margin-bottom:65px;
+
 }
 
+
+/* =========================================
+   QUESTIONS
+========================================= */
+
 .question-bloc{
-    position:relative;
 
     display:grid;
+
     grid-template-columns:80px 1fr;
 
     padding:35px 0;
 
     border-top:1px solid rgba(189,163,106,.18);
-    border-bottom:1px solid rgba(189,163,106,.18);
+
 }
+
+
+.question-bloc:last-of-type{
+
+    border-bottom:1px solid rgba(189,163,106,.18);
+
+}
+
 
 .numero-question{
+
     font-family:Georgia,serif;
+
     font-size:32px;
+
     color:rgba(189,163,106,.45);
+
 }
 
+
 .question-contenu label{
+
     display:block;
 
     color:#d0b97e;
+
     letter-spacing:3px;
+
     font-size:11px;
 
     margin-bottom:15px;
+
 }
+
 
 .question-contenu p{
+
     color:#9ba8b4;
+
     font-size:14px;
+
     margin-bottom:25px;
+
 }
 
-.question-contenu input{
-    width:100%;
 
-    padding:17px 18px;
-
-    border:1px solid rgba(189,163,106,.28);
-    outline:none;
-
-    background:rgba(3,10,17,.35);
-
-    color:white;
-    font-size:15px;
-
-    transition:.3s;
-}
-
-.question-contenu input:focus{
-    border-color:#bda36a;
-
-    box-shadow:
-        0 0 25px rgba(189,163,106,.08);
-}
-
-.question-contenu input::placeholder{
-    color:#53606c;
-}
-/* BOUTON TRANSMISSION */
-
-.transmission-rapport{
-    margin-top:85px;
-    padding:55px 0 50px;
-    text-align:center;
-}
-
-.transmission-ligne{
-    width:55px;
-    height:1px;
-    background:#bda36a;
-    margin:0 auto 30px;
-}
-
-.transmission-titre{
-    font-family:Georgia,"Times New Roman",serif;
-    color:#cbb47c;
-    font-size:12px;
-    letter-spacing:4px;
-    margin-bottom:20px;
-}
-
-.transmission-rapport p{
-    max-width:520px;
-    margin:0 auto 35px;
-    color:#7f8c98;
-    font-size:13px;
-    line-height:1.7;
-}
-
-.bouton-transmettre{
-    padding:18px 42px;
-    border:1px solid #bda36a;
-    background:rgba(8,18,29,.65);
-    color:#d2bd88;
-    font-size:11px;
-    letter-spacing:3px;
-    cursor:pointer;
-    transition:.4s;
-}
-
-.bouton-transmettre:hover{
-    background:#bda36a;
-    color:#07101b;
-    box-shadow:0 0 40px rgba(189,163,106,.25);
-}
-
-.transmission-securisee{
-    margin-top:25px;
-    color:#46535f;
-    font-size:8px;
-    letter-spacing:3px;
-}
-    /* ZONES DE RÉPONSE QUESTIONS 03 ET 04 */
-
+.question-contenu input,
 .question-contenu textarea{
+
     width:100%;
-    min-height:115px;
 
     padding:17px 18px;
 
     border:1px solid rgba(189,163,106,.28);
+
     outline:none;
 
     background:rgba(3,10,17,.35);
@@ -539,237 +648,596 @@ h1{
     color:white;
 
     font-family:"Segoe UI",Arial,sans-serif;
+
     font-size:15px;
+
+    transition:.3s;
+
+}
+
+
+.question-contenu textarea{
+
+    min-height:115px;
+
     line-height:1.6;
 
     resize:vertical;
 
-    transition:.3s;
 }
 
+
+.question-contenu input:focus,
 .question-contenu textarea:focus{
+
     border-color:#bda36a;
-    box-shadow:0 0 25px rgba(189,163,106,.10);
+
+    box-shadow:
+        0 0 25px rgba(189,163,106,.10);
+
 }
 
+
+.question-contenu input::placeholder,
 .question-contenu textarea::placeholder{
+
     color:#53606c;
-}
-/* =========================
-   TRANSMISSION DU RAPPORT
-========================= */
 
-.ecran-transmission{
-    position:fixed;
-    inset:0;
-    z-index:500;
-
-    background:
-        radial-gradient(circle at center, #122335 0%, #07101b 58%, #03070c 100%);
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    opacity:0;
-    visibility:hidden;
-
-    transition:opacity .7s ease, visibility .7s;
 }
 
-.ecran-transmission.visible{
-    opacity:1;
-    visibility:visible;
-}
 
-.transmission-centre{
-    width:min(500px,80vw);
+/* =========================================
+   BOUTON FINAL
+========================================= */
+
+.transmission-rapport{
+
+    margin-top:85px;
+
+    padding:55px 0 50px;
+
     text-align:center;
+
 }
 
-.transmission-emblem{
-    margin-bottom:42px;
-}
 
-.transmission-reference{
-    font-size:8px;
-    letter-spacing:4px;
-    color:#52606d;
-    margin-bottom:22px;
-}
+.transmission-ligne{
 
-.texte-transmission{
-    min-height:30px;
-
-    font-family:Georgia,"Times New Roman",serif;
-    font-size:18px;
-    letter-spacing:3px;
-
-    color:#d1bb82;
-}
-
-.barre-transmission{
-    width:100%;
+    width:55px;
     height:1px;
-
-    margin:30px 0 18px;
-
-    background:rgba(189,163,106,.18);
-
-    overflow:hidden;
-}
-
-.progression-transmission{
-    width:0;
-    height:100%;
 
     background:#bda36a;
 
-    box-shadow:0 0 18px rgba(189,163,106,.45);
-}
-
-.ecran-transmission.visible .progression-transmission{
-    animation:progressionRapport 5s ease forwards;
-}
-
-@keyframes progressionRapport{
-
-    0%{width:0;}
-    25%{width:20%;}
-    55%{width:52%;}
-    78%{width:78%;}
-    100%{width:100%;}
+    margin:0 auto 30px;
 
 }
 
-.detail-transmission{
-    font-size:9px;
-    letter-spacing:2px;
-    color:#65727e;
-}
-/* =========================
-   QR CODE FINAL
-========================= */
 
-.zone-qr{
-    margin-top:45px;
-
-    opacity:0;
-    visibility:hidden;
-
-    transform:translateY(15px) scale(.97);
-
-    transition:
-        opacity 1.2s ease,
-        transform 1.2s ease,
-        visibility 1.2s;
-}
-
-.zone-qr.visible{
-    opacity:1;
-    visibility:visible;
-
-    transform:translateY(0) scale(1);
-}
-
-.qr-ligne{
-    width:45px;
-    height:1px;
-
-    margin:0 auto 24px;
-
-    background:#bda36a;
-}
-
-.qr-titre{
-    margin-bottom:25px;
+.transmission-titre{
 
     font-family:Georgia,"Times New Roman",serif;
-
-    font-size:11px;
-    letter-spacing:4px;
 
     color:#cbb47c;
+
+    font-size:12px;
+
+    letter-spacing:4px;
+
+    margin-bottom:20px;
+
 }
 
-.qr-cadre{
-    width:220px;
-    height:220px;
 
-    margin:0 auto;
+.transmission-rapport p{
 
-    padding:14px;
+    max-width:520px;
 
-    background:#eae5d8;
+    margin:0 auto 35px;
+
+    color:#7f8c98;
+
+    font-size:13px;
+
+    line-height:1.7;
+
+}
+
+
+.bouton-transmettre{
+
+    padding:18px 42px;
 
     border:1px solid #bda36a;
 
-    box-shadow:
-        0 0 45px rgba(189,163,106,.15),
-        0 20px 60px rgba(0,0,0,.35);
+    background:rgba(8,18,29,.65);
+
+    color:#d2bd88;
+
+    font-size:11px;
+
+    letter-spacing:3px;
+
+    cursor:pointer;
+
+    transition:.4s;
+
 }
 
-.qr-placeholder{
-    width:100%;
-    height:100%;
+
+.bouton-transmettre:hover{
+
+    background:#bda36a;
+
+    color:#07101b;
+
+    box-shadow:
+        0 0 40px rgba(189,163,106,.25);
+
+}
+
+
+.transmission-securisee{
+
+    margin-top:25px;
+
+    color:#46535f;
+
+    font-size:8px;
+
+    letter-spacing:3px;
+
+}
+
+
+.erreur-rapport{
+
+    display:none;
+
+    margin-top:25px;
+
+    color:#a97575;
+
+    font-size:11px;
+
+    letter-spacing:2px;
+
+}
+
+
+/* =========================================
+   ÉCRAN DE TRANSMISSION
+========================================= */
+
+.ecran-transmission{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:500;
+
+    background:
+        radial-gradient(circle at center,#122335 0%,#07101b 58%,#03070c 100%);
 
     display:flex;
+
     align-items:center;
     justify-content:center;
 
-    background:
-        repeating-linear-gradient(
-            45deg,
-            #101820 0px,
-            #101820 9px,
-            #eae5d8 9px,
-            #eae5d8 18px
-        );
+    padding:40px 20px;
 
-    border:8px solid #101820;
+    overflow-y:auto;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:
+        opacity .7s ease,
+        visibility .7s;
+
 }
 
-.qr-placeholder span{
-    padding:12px;
 
-    background:#eae5d8;
+.ecran-transmission.visible{
 
-    color:#101820;
+    opacity:1;
 
-    font-family:Georgia,serif;
-    font-size:24px;
+    visibility:visible;
+
+}
+
+
+.transmission-centre{
+
+    width:min(750px,90vw);
+
+    margin:auto;
+
+    text-align:center;
+
+}
+
+
+.bloc-analyse{
+
+    transition:
+        opacity .7s ease,
+        transform .7s ease;
+
+}
+
+
+.bloc-analyse.disparition{
+
+    opacity:0;
+
+    transform:translateY(-15px);
+
+}
+
+
+.transmission-emblem{
+
+    margin-bottom:42px;
+
+}
+
+
+.transmission-reference{
+
+    font-size:8px;
+
     letter-spacing:4px;
-}
-
-.qr-reference{
-    margin-top:22px;
 
     color:#52606d;
 
-    font-size:8px;
-    letter-spacing:2px;
+    margin-bottom:28px;
+
 }
 
 
-/* RÉSULTAT DU RAPPORT */
+.texte-transmission{
+
+    min-height:35px;
+
+    font-family:Georgia,"Times New Roman",serif;
+
+    font-size:24px;
+
+    letter-spacing:4px;
+
+    color:#d1bb82;
+
+    text-align:center;
+
+}
+
 
 .texte-transmission.accepted{
+
     color:#d6bf82;
 
     text-shadow:
         0 0 22px rgba(214,191,130,.30);
+
 }
 
+
 .texte-transmission.rejected{
+
     color:#a97575;
+
 }
+
+
+.barre-transmission{
+
+    width:100%;
+
+    max-width:520px;
+
+    height:1px;
+
+    margin:35px auto 25px;
+
+    background:rgba(189,163,106,.18);
+
+    overflow:hidden;
+
+}
+
+
+.progression-transmission{
+
+    width:0;
+
+    height:100%;
+
+    background:#bda36a;
+
+    box-shadow:
+        0 0 18px rgba(189,163,106,.45);
+
+}
+
+
+.ecran-transmission.visible .progression-transmission{
+
+    animation:progressionRapport 5s ease forwards;
+
+}
+
+
+@keyframes progressionRapport{
+
+    0%{width:0;}
+
+    25%{width:20%;}
+
+    55%{width:52%;}
+
+    78%{width:78%;}
+
+    100%{width:100%;}
+
+}
+
+
+.detail-transmission{
+
+    font-size:9px;
+
+    letter-spacing:2px;
+
+    color:#65727e;
+
+    min-height:20px;
+
+}
+
+
+/* =========================================
+   QR CODE
+========================================= */
+
+.zone-qr{
+
+    display:none;
+
+    opacity:0;
+
+    text-align:center;
+
+    transform:scale(.96);
+
+}
+
+
+.zone-qr.visible{
+
+    display:block;
+
+    animation:apparitionQR 1.3s ease forwards;
+
+}
+
+
+@keyframes apparitionQR{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(.96) translateY(15px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1) translateY(0);
+
+    }
+
+}
+
+
+.instruction-qr{
+
+    font-family:Georgia,"Times New Roman",serif;
+
+    font-size:18px;
+
+    line-height:1.7;
+
+    color:#d6bf82;
+
+    margin-bottom:35px;
+
+    letter-spacing:1px;
+
+}
+
+
+/* QR TEMPORAIRE */
+
+.qr-cadre{
+
+    width:270px;
+    height:270px;
+
+    margin:0 auto;
+
+    padding:15px;
+
+    background:#eee9dd;
+
+    border:1px solid #bda36a;
+
+    box-shadow:
+        0 0 55px rgba(189,163,106,.18),
+        0 25px 70px rgba(0,0,0,.45);
+
+}
+
+
+.qr-placeholder{
+
+    width:100%;
+    height:100%;
+
+    background-color:#eee9dd;
+
+    background-image:
+
+        linear-gradient(90deg,#101820 20%,transparent 20%,transparent 40%,#101820 40%,#101820 60%,transparent 60%,transparent 80%,#101820 80%),
+
+        linear-gradient(#101820 20%,transparent 20%,transparent 40%,#101820 40%,#101820 60%,transparent 60%,transparent 80%,#101820 80%);
+
+    background-size:38px 38px;
+
+    border:10px solid #101820;
+
+}
+
+
+/* =========================================
+   RAPPORT REJETÉ
+========================================= */
+
+.retour-rapport{
+
+    display:none;
+
+    margin:35px auto 0;
+
+    padding:14px 30px;
+
+    border:1px solid rgba(189,163,106,.55);
+
+    background:transparent;
+
+    color:#cbb47c;
+
+    font-size:10px;
+
+    letter-spacing:3px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+
+.retour-rapport.visible{
+
+    display:block;
+
+}
+
+
+.retour-rapport:hover{
+
+    background:#bda36a;
+
+    color:#07101b;
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media(max-width:700px){
+
+    h1{
+
+        font-size:34px;
+
+        letter-spacing:5px;
+
+    }
+
+
+    .academy{
+
+        letter-spacing:4px;
+
+    }
+
+
+    .question-bloc{
+
+        grid-template-columns:45px 1fr;
+
+    }
+
+
+    .numero-question{
+
+        font-size:24px;
+
+    }
+
+
+    .rapport h2{
+
+        font-size:36px;
+
+    }
+
+
+    .rapport-header{
+
+        padding:0 5vw;
+
+    }
+
+
+    .rapport-marque{
+
+        font-size:10px;
+
+        letter-spacing:3px;
+
+    }
+
+
+    .instruction-qr{
+
+        font-size:16px;
+
+    }
+
+
+    .qr-cadre{
+
+        width:230px;
+
+        height:230px;
+
+    }
+
+}
+
 </style>
 
 </head>
 
+
 <body>
 
+
 <div class="background"></div>
+
+
+<!-- =====================================
+     ACCUEIL
+===================================== -->
 
 <main class="portal">
 
@@ -789,16 +1257,21 @@ h1{
         Bureau du Directeur des Admissions
     </div>
 
-  <button class="enter" onclick="accederDossier()">
-    ACCÉDER AU DOSSIER
-  </button>
+    <button class="enter" onclick="accederDossier()">
+        ACCÉDER AU DOSSIER
+    </button>
 
     <div class="confidential">
         ACCÈS CONFIDENTIEL · BLACKWOOD ACADEMY
     </div>
 
 </main>
-<!-- RAPPORT D'ENQUÊTE -->
+
+
+
+<!-- =====================================
+     RAPPORT D'ENQUÊTE
+===================================== -->
 
 <section id="rapport" class="rapport">
 
@@ -813,6 +1286,7 @@ h1{
         </div>
 
     </div>
+
 
     <div class="rapport-contenu">
 
@@ -829,141 +1303,187 @@ h1{
             Le Directeur attend désormais vos conclusions.
         </p>
 
+
+        <!-- QUESTION 01 -->
+
         <div class="question-bloc">
 
-          <div class="numero-question">01</div>
+            <div class="numero-question">
+                01
+            </div>
 
-    <div class="question-contenu">
+            <div class="question-contenu">
 
-        <label>IDENTIFICATION</label>
+                <label>
+                    IDENTIFICATION
+                </label>
 
-        <p>
-            Quel est le nom de l'étudiant chargé de l'enquête ?
-        </p>
+                <p>
+                    Quel est le nom de l'étudiant chargé de l'enquête ?
+                </p>
 
-        <input
-            type="text"
-            id="nomEnqueteur"
-            placeholder="Nom de l'étudiant"
-            autocomplete="off"
-        >
+                <input
+                    type="text"
+                    id="nomEnqueteur"
+                    placeholder="Nom de l'étudiant"
+                    autocomplete="off"
+                >
 
-</div>
+            </div>
 
         </div>
-<!-- QUESTION 02 -->
 
-<div class="question-bloc">
 
-    <div class="numero-question">02</div>
+        <!-- QUESTION 02 -->
 
-    <div class="question-contenu">
+        <div class="question-bloc">
 
-        <label>VOTRE ACCUSATION</label>
+            <div class="numero-question">
+                02
+            </div>
 
-        <p>
-            Selon vous, qui est le meurtrier ?
-        </p>
+            <div class="question-contenu">
 
-        <input
-            type="text"
-            id="meurtrier"
-            placeholder="Nom du suspect"
-            autocomplete="off"
-        >
+                <label>
+                    VOTRE ACCUSATION
+                </label>
 
-    </div>
+                <p>
+                    Selon vous, qui est le meurtrier ?
+                </p>
 
-</div>
-<!-- QUESTION 03 -->
+                <input
+                    type="text"
+                    id="meurtrier"
+                    placeholder="Nom du suspect"
+                    autocomplete="off"
+                >
 
-<div class="question-bloc">
+            </div>
 
-    <div class="numero-question">03</div>
+        </div>
 
-    <div class="question-contenu">
 
-        <label>LA DÉCOUVERTE D'ETHAN</label>
+        <!-- QUESTION 03 -->
 
-        <p>
-            Qu'est-ce qu'Ethan avait découvert ?
-        </p>
+        <div class="question-bloc">
 
-        <textarea
-            id="decouverteEthan"
-            placeholder="Votre réponse..."
-            rows="4"
-        ></textarea>
+            <div class="numero-question">
+                03
+            </div>
 
-    </div>
+            <div class="question-contenu">
 
-</div>
+                <label>
+                    LA DÉCOUVERTE D'ETHAN
+                </label>
 
-<!-- QUESTION 04 -->
+                <p>
+                    Qu'est-ce qu'Ethan avait découvert ?
+                </p>
 
-<div class="question-bloc">
+                <textarea
+                    id="decouverteEthan"
+                    placeholder="Votre réponse..."
+                    rows="4"
+                ></textarea>
 
-    <div class="numero-question">04</div>
+            </div>
 
-    <div class="question-contenu">
+        </div>
 
-        <label>LA PREUVE</label>
 
-        <p>
-            Quelle preuve condamne votre suspect ?
-        </p>
+        <!-- QUESTION 04 -->
 
-        <textarea
-            id="preuve"
-            placeholder="Votre réponse..."
-            rows="4"
-        ></textarea>
+        <div class="question-bloc">
 
-    </div>
+            <div class="numero-question">
+                04
+            </div>
 
-</div>
-<!-- TRANSMISSION DU RAPPORT -->
+            <div class="question-contenu">
 
-<div class="transmission-rapport">
+                <label>
+                    LA PREUVE
+                </label>
 
-    <div class="transmission-ligne"></div>
+                <p>
+                    Quelle preuve condamne votre suspect ?
+                </p>
 
-    <div class="transmission-titre">
-        VOS CONCLUSIONS SONT PRÊTES
-    </div>
+                <textarea
+                    id="preuve"
+                    placeholder="Votre réponse..."
+                    rows="4"
+                ></textarea>
 
-    <p>
-        Vérifiez vos réponses avant de transmettre votre rapport au Directeur des Admissions.
-    </p>
+            </div>
 
-   <button class="bouton-transmettre" onclick="transmettreRapport()">
-    TRANSMETTRE LE RAPPORT
-</button>
+        </div>
 
-    <div class="transmission-securisee">
-        TRANSMISSION SÉCURISÉE · BLACKWOOD ACADEMY
-    </div>
 
-</div>
+        <!-- TRANSMISSION -->
+
+        <div class="transmission-rapport">
+
+            <div class="transmission-ligne"></div>
+
+            <div class="transmission-titre">
+                VOS CONCLUSIONS SONT PRÊTES
+            </div>
+
+            <p>
+                Vérifiez vos réponses avant de transmettre votre rapport au Directeur des Admissions.
+            </p>
+
+            <button
+                class="bouton-transmettre"
+                onclick="transmettreRapport()"
+            >
+                TRANSMETTRE LE RAPPORT
+            </button>
+
+            <div id="erreurRapport" class="erreur-rapport">
+                VOUS DEVEZ DÉSIGNER UN SUSPECT AVANT LA TRANSMISSION
+            </div>
+
+            <div class="transmission-securisee">
+                TRANSMISSION SÉCURISÉE · BLACKWOOD ACADEMY
+            </div>
+
+        </div>
+
     </div>
 
 </section>
-<!-- ÉCRAN DE TRANSITION -->
+
+
+
+<!-- =====================================
+     AUTHENTIFICATION
+===================================== -->
 
 <div id="transition" class="transition">
 
     <div class="transition-content">
 
         <div class="mini-emblem">
+
             <span>B</span>
+
         </div>
 
-        <div id="messageTransition" class="system-message">
+        <div
+            id="messageTransition"
+            class="system-message"
+        >
             AUTHENTIFICATION...
         </div>
 
         <div class="loading-line">
+
             <div class="loading-progress"></div>
+
         </div>
 
         <div class="security-code">
@@ -974,124 +1494,245 @@ h1{
 
 </div>
 
-<!-- TRANSMISSION DU RAPPORT -->
 
-<div id="ecranTransmission" class="ecran-transmission">
+
+<!-- =====================================
+     ÉCRAN TRANSMISSION / RÉSULTAT
+===================================== -->
+
+<div
+    id="ecranTransmission"
+    class="ecran-transmission"
+>
 
     <div class="transmission-centre">
 
-        <div class="mini-emblem transmission-emblem">
-            <span>B</span>
+
+        <!-- ANALYSE -->
+
+        <div
+            id="blocAnalyse"
+            class="bloc-analyse"
+        >
+
+            <div class="mini-emblem transmission-emblem">
+
+                <span>B</span>
+
+            </div>
+
+            <div class="transmission-reference">
+
+                BLACKWOOD ACADEMY · SECURE NETWORK
+
+            </div>
+
+            <div
+                id="texteTransmission"
+                class="texte-transmission"
+            >
+                TRANSMISSION DU RAPPORT...
+            </div>
+
+            <div class="barre-transmission">
+
+                <div
+                    id="progressionTransmission"
+                    class="progression-transmission"
+                ></div>
+
+            </div>
+
+            <div
+                id="detailTransmission"
+                class="detail-transmission"
+            >
+                Établissement de la connexion sécurisée
+            </div>
+
+            <button
+                id="boutonRetour"
+                class="retour-rapport"
+                onclick="retourAuRapport()"
+            >
+                REPRENDRE L'ENQUÊTE
+            </button>
+
         </div>
 
-        <div class="transmission-reference">
-            BLACKWOOD ACADEMY · SECURE NETWORK
+
+        <!-- QR -->
+
+        <div
+            id="zoneQR"
+            class="zone-qr"
+        >
+
+            <p class="instruction-qr">
+                Merci de scanner ce QR code pour poursuivre.
+            </p>
+
+            <div class="qr-cadre">
+
+                <!--
+                    QR TEMPORAIRE.
+                    Plus tard, on remplacera ce bloc
+                    par ton véritable QR code.
+                -->
+
+                <div class="qr-placeholder"></div>
+
+            </div>
+
         </div>
 
-        <div id="texteTransmission" class="texte-transmission">
-            TRANSMISSION DU RAPPORT...
-        </div>
 
-        <div class="barre-transmission">
-            <div id="progressionTransmission" class="progression-transmission"></div>
-        </div>
-        <div id="detailTransmission" class="detail-transmission">
-            Établissement de la connexion sécurisée
-        </div>
-        <!-- QR CODE FINAL -->
-
-<div id="zoneQR" class="zone-qr">
-
-    <div class="qr-ligne"></div>
-
-    <div class="qr-titre">
-        CANAL SÉCURISÉ
-    </div>
-
-    <div class="qr-cadre">
-
-        <!-- QR TEMPORAIRE -->
-        <div class="qr-placeholder">
-            <span>QR</span>
-        </div>
-
-    </div>
-
-    <div class="qr-reference">
-        BLACKWOOD ACADEMY · TRANSMISSION CONFIDENTIELLE
     </div>
 
 </div>
 
-    </div>
 
-</div>
 
 <script>
 
+/* =========================================
+   OUVERTURE DU DOSSIER
+========================================= */
+
 function accederDossier(){
 
-    const transition = document.getElementById("transition");
-    const message = document.getElementById("messageTransition");
+    const transition =
+        document.getElementById("transition");
+
+    const message =
+        document.getElementById("messageTransition");
+
 
     transition.classList.add("active");
 
-    setTimeout(function(){
-        message.innerHTML = "VÉRIFICATION DES AUTORISATIONS...";
-    }, 1500);
 
     setTimeout(function(){
-        message.innerHTML = "ACCÈS AUTORISÉ";
+
+        message.innerHTML =
+            "VÉRIFICATION DES AUTORISATIONS...";
+
+    },1500);
+
+
+    setTimeout(function(){
+
+        message.innerHTML =
+            "ACCÈS AUTORISÉ";
+
         message.classList.add("accepted");
-    }, 3200);
+
+    },3200);
+
 
     setTimeout(function(){
-        message.innerHTML = "OUVERTURE DU DOSSIER...";
-    }, 4400);
+
+        message.innerHTML =
+            "OUVERTURE DU DOSSIER...";
+
+    },4400);
+
 
     setTimeout(function(){
 
         transition.classList.remove("active");
 
-        document.querySelector(".portal").style.display = "none";
+        document.querySelector(".portal")
+            .style.display = "none";
 
-        document.getElementById("rapport").classList.add("visible");
+        document.getElementById("rapport")
+            .classList.add("visible");
 
-    }, 5600);
+    },5600);
 
 }
 
 
+
+/* =========================================
+   TRANSMISSION DU RAPPORT
+========================================= */
+
 function transmettreRapport(){
 
-    const ecran = document.getElementById("ecranTransmission");
-    const texte = document.getElementById("texteTransmission");
-    const detail = document.getElementById("detailTransmission");
-    const progression = document.getElementById("progressionTransmission");
-    const champMeurtrier = document.getElementById("meurtrier");
-    const zoneQR = document.getElementById("zoneQR");
+    const ecran =
+        document.getElementById("ecranTransmission");
+
+    const blocAnalyse =
+        document.getElementById("blocAnalyse");
+
+    const texte =
+        document.getElementById("texteTransmission");
+
+    const detail =
+        document.getElementById("detailTransmission");
+
+    const progression =
+        document.getElementById("progressionTransmission");
+
+    const champMeurtrier =
+        document.getElementById("meurtrier");
+
+    const zoneQR =
+        document.getElementById("zoneQR");
+
+    const boutonRetour =
+        document.getElementById("boutonRetour");
+
+    const erreur =
+        document.getElementById("erreurRapport");
+
+
+    /* SUSPECT OBLIGATOIRE */
 
     if(!champMeurtrier.value.trim()){
-        alert("Vous devez désigner un suspect avant de transmettre votre rapport.");
+
+        erreur.style.display = "block";
+
         return;
+
     }
+
+
+    erreur.style.display = "none";
+
 
     /* REMISE À ZÉRO */
 
+    blocAnalyse.style.display = "block";
+
+    blocAnalyse.classList.remove("disparition");
+
     zoneQR.classList.remove("visible");
+
+    boutonRetour.classList.remove("visible");
 
     texte.classList.remove("accepted");
     texte.classList.remove("rejected");
 
+
     progression.style.animation = "none";
+
     progression.offsetHeight;
+
     progression.style.animation = "";
+
 
     ecran.classList.add("visible");
 
-    texte.innerHTML = "TRANSMISSION DU RAPPORT...";
-    detail.innerHTML = "Établissement de la connexion sécurisée";
 
+    texte.innerHTML =
+        "TRANSMISSION DU RAPPORT...";
+
+    detail.innerHTML =
+        "Établissement de la connexion sécurisée";
+
+
+    /* ÉTAPE 1 */
 
     setTimeout(function(){
 
@@ -1101,9 +1742,12 @@ function transmettreRapport(){
     },1400);
 
 
+    /* ÉTAPE 2 */
+
     setTimeout(function(){
 
-        texte.innerHTML = "RAPPORT REÇU";
+        texte.innerHTML =
+            "RAPPORT REÇU";
 
         detail.innerHTML =
             "Vérification de l'accusation...";
@@ -1111,9 +1755,12 @@ function transmettreRapport(){
     },3000);
 
 
+    /* ÉTAPE 3 */
+
     setTimeout(function(){
 
-        texte.innerHTML = "ANALYSE EN COURS...";
+        texte.innerHTML =
+            "ANALYSE EN COURS...";
 
         detail.innerHTML =
             "BLACKWOOD ACADEMY · DOSSIER CONFIDENTIEL";
@@ -1121,51 +1768,129 @@ function transmettreRapport(){
     },4300);
 
 
+    /* ÉTAPE 4 : VÉRIFICATION */
+
     setTimeout(function(){
 
-        let reponse = champMeurtrier.value
+        let reponse =
+            champMeurtrier.value
             .toLowerCase()
             .trim()
             .normalize("NFD")
-            .replace(/[\u0300-\u036f]/g, "");
+            .replace(/[\u0300-\u036f]/g,"");
+
 
         let bonneReponse =
+
             reponse.includes("ayden") ||
+
             reponse.includes("aiden") ||
+
             reponse.includes("zareck");
 
 
+        /* =========================
+           BONNE RÉPONSE
+        ========================= */
+
         if(bonneReponse){
 
-            texte.innerHTML = "RAPPORT ACCEPTÉ";
+            texte.innerHTML =
+                "RAPPORT ACCEPTÉ";
 
             texte.classList.add("accepted");
 
-            detail.innerHTML = "ACCUSATION CONFIRMÉE";
+            detail.innerHTML =
+                "ACCUSATION CONFIRMÉE";
 
+
+            /*
+               ON LAISSE RAPPORT ACCEPTÉ
+               À L'ÉCRAN 2 SECONDES
+            */
 
             setTimeout(function(){
 
-                zoneQR.classList.add("visible");
+                blocAnalyse.classList.add(
+                    "disparition"
+                );
 
-            },1500);
+            },2000);
 
 
-        }else{
+            /*
+               ENSUITE TOUT DISPARAÎT
+               ET LE QR ARRIVE
+            */
 
-            texte.innerHTML = "RAPPORT REJETÉ";
+            setTimeout(function(){
+
+                blocAnalyse.style.display =
+                    "none";
+
+                zoneQR.classList.add(
+                    "visible"
+                );
+
+            },2700);
+
+        }
+
+
+        /* =========================
+           MAUVAISE RÉPONSE
+        ========================= */
+
+        else{
+
+            texte.innerHTML =
+                "RAPPORT REJETÉ";
 
             texte.classList.add("rejected");
 
             detail.innerHTML =
                 "Les éléments transmis ne permettent pas de confirmer votre accusation.";
 
+            boutonRetour.classList.add(
+                "visible"
+            );
+
         }
+
 
     },5800);
 
 }
+
+
+
+/* =========================================
+   RETOUR SI MAUVAISE RÉPONSE
+========================================= */
+
+function retourAuRapport(){
+
+    const ecran =
+        document.getElementById("ecranTransmission");
+
+    const texte =
+        document.getElementById("texteTransmission");
+
+    const boutonRetour =
+        document.getElementById("boutonRetour");
+
+
+    ecran.classList.remove("visible");
+
+    boutonRetour.classList.remove("visible");
+
+    texte.classList.remove("rejected");
+
+}
+
 </script>
+
+
 </body>
 
 </html>

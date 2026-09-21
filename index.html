@@ -647,6 +647,122 @@ h1{
     letter-spacing:2px;
     color:#65727e;
 }
+/* =========================
+   QR CODE FINAL
+========================= */
+
+.zone-qr{
+    margin-top:45px;
+
+    opacity:0;
+    visibility:hidden;
+
+    transform:translateY(15px) scale(.97);
+
+    transition:
+        opacity 1.2s ease,
+        transform 1.2s ease,
+        visibility 1.2s;
+}
+
+.zone-qr.visible{
+    opacity:1;
+    visibility:visible;
+
+    transform:translateY(0) scale(1);
+}
+
+.qr-ligne{
+    width:45px;
+    height:1px;
+
+    margin:0 auto 24px;
+
+    background:#bda36a;
+}
+
+.qr-titre{
+    margin-bottom:25px;
+
+    font-family:Georgia,"Times New Roman",serif;
+
+    font-size:11px;
+    letter-spacing:4px;
+
+    color:#cbb47c;
+}
+
+.qr-cadre{
+    width:220px;
+    height:220px;
+
+    margin:0 auto;
+
+    padding:14px;
+
+    background:#eae5d8;
+
+    border:1px solid #bda36a;
+
+    box-shadow:
+        0 0 45px rgba(189,163,106,.15),
+        0 20px 60px rgba(0,0,0,.35);
+}
+
+.qr-placeholder{
+    width:100%;
+    height:100%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:
+        repeating-linear-gradient(
+            45deg,
+            #101820 0px,
+            #101820 9px,
+            #eae5d8 9px,
+            #eae5d8 18px
+        );
+
+    border:8px solid #101820;
+}
+
+.qr-placeholder span{
+    padding:12px;
+
+    background:#eae5d8;
+
+    color:#101820;
+
+    font-family:Georgia,serif;
+    font-size:24px;
+    letter-spacing:4px;
+}
+
+.qr-reference{
+    margin-top:22px;
+
+    color:#52606d;
+
+    font-size:8px;
+    letter-spacing:2px;
+}
+
+
+/* RÉSULTAT DU RAPPORT */
+
+.texte-transmission.accepted{
+    color:#d6bf82;
+
+    text-shadow:
+        0 0 22px rgba(214,191,130,.30);
+}
+
+.texte-transmission.rejected{
+    color:#a97575;
+}
 </style>
 
 </head>
@@ -880,9 +996,30 @@ h1{
             <div id="progressionTransmission" class="progression-transmission"></div>
         </div>
 
-        <div id="detailTransmission" class="detail-transmission">
-            Établissement de la connexion sécurisée
+        <!-- QR CODE FINAL -->
+
+<div id="zoneQR" class="zone-qr">
+
+    <div class="qr-ligne"></div>
+
+    <div class="qr-titre">
+        CANAL SÉCURISÉ
+    </div>
+
+    <div class="qr-cadre">
+
+        <!-- QR TEMPORAIRE -->
+        <div class="qr-placeholder">
+            <span>QR</span>
         </div>
+
+    </div>
+
+    <div class="qr-reference">
+        BLACKWOOD ACADEMY · TRANSMISSION CONFIDENTIELLE
+    </div>
+
+</div>
 
     </div>
 
@@ -927,13 +1064,108 @@ function transmettreRapport(){
     const texte = document.getElementById("texteTransmission");
     const detail = document.getElementById("detailTransmission");
     const progression = document.getElementById("progressionTransmission");
-
     const champMeurtrier = document.getElementById("meurtrier");
+    const zoneQR = document.getElementById("zoneQR");
 
     if(!champMeurtrier.value.trim()){
         alert("Vous devez désigner un suspect avant de transmettre votre rapport.");
         return;
     }
+
+    /* REMISE À ZÉRO */
+
+    zoneQR.classList.remove("visible");
+
+    texte.classList.remove("accepted");
+    texte.classList.remove("rejected");
+
+    progression.style.animation = "none";
+    progression.offsetHeight;
+    progression.style.animation = "";
+
+    ecran.classList.add("visible");
+
+    texte.innerHTML = "TRANSMISSION DU RAPPORT...";
+    detail.innerHTML = "Établissement de la connexion sécurisée";
+
+
+    setTimeout(function(){
+
+        detail.innerHTML =
+            "Envoi des conclusions au Bureau du Directeur";
+
+    },1400);
+
+
+    setTimeout(function(){
+
+        texte.innerHTML = "RAPPORT REÇU";
+
+        detail.innerHTML =
+            "Vérification de l'accusation...";
+
+    },3000);
+
+
+    setTimeout(function(){
+
+        texte.innerHTML = "ANALYSE EN COURS...";
+
+        detail.innerHTML =
+            "BLACKWOOD ACADEMY · DOSSIER CONFIDENTIEL";
+
+    },4300);
+
+
+    /* VÉRIFICATION DU SUSPECT */
+
+    setTimeout(function(){
+
+        let reponse = champMeurtrier.value
+            .toLowerCase()
+            .trim()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "");
+
+        let bonneReponse =
+            reponse.includes("ayden") ||
+            reponse.includes("aiden") ||
+            reponse.includes("zareck");
+
+
+        if(bonneReponse){
+
+            texte.innerHTML = "RAPPORT ACCEPTÉ";
+
+            texte.classList.add("accepted");
+
+            detail.innerHTML =
+                "ACCUSATION CONFIRMÉE";
+
+
+            /* APPARITION DU QR CODE */
+
+            setTimeout(function(){
+
+                zoneQR.classList.add("visible");
+
+            },1500);
+
+
+        }else{
+
+            texte.innerHTML = "RAPPORT REJETÉ";
+
+            texte.classList.add("rejected");
+
+            detail.innerHTML =
+                "Les éléments transmis ne permettent pas de confirmer votre accusation.";
+
+        }
+
+    },5800);
+
+}
 
     progression.style.animation = "none";
     progression.offsetHeight;

@@ -995,7 +995,9 @@ h1{
         <div class="barre-transmission">
             <div id="progressionTransmission" class="progression-transmission"></div>
         </div>
-
+        <div id="detailTransmission" class="detail-transmission">
+            Établissement de la connexion sécurisée
+        </div>
         <!-- QR CODE FINAL -->
 
 <div id="zoneQR" class="zone-qr">
@@ -1049,15 +1051,17 @@ function accederDossier(){
 
     setTimeout(function(){
 
-    transition.classList.remove("active");
+        transition.classList.remove("active");
 
-    document.querySelector(".portal").style.display = "none";
+        document.querySelector(".portal").style.display = "none";
 
-    document.getElementById("rapport").classList.add("visible");
+        document.getElementById("rapport").classList.add("visible");
 
-}, 5600);
+    }, 5600);
 
 }
+
+
 function transmettreRapport(){
 
     const ecran = document.getElementById("ecranTransmission");
@@ -1117,8 +1121,6 @@ function transmettreRapport(){
     },4300);
 
 
-    /* VÉRIFICATION DU SUSPECT */
-
     setTimeout(function(){
 
         let reponse = champMeurtrier.value
@@ -1139,11 +1141,8 @@ function transmettreRapport(){
 
             texte.classList.add("accepted");
 
-            detail.innerHTML =
-                "ACCUSATION CONFIRMÉE";
+            detail.innerHTML = "ACCUSATION CONFIRMÉE";
 
-
-            /* APPARITION DU QR CODE */
 
             setTimeout(function(){
 
@@ -1166,68 +1165,6 @@ function transmettreRapport(){
     },5800);
 
 }
-
-    progression.style.animation = "none";
-    progression.offsetHeight;
-    progression.style.animation = "";
-
-    ecran.classList.add("visible");
-
-    texte.innerHTML = "TRANSMISSION DU RAPPORT...";
-    detail.innerHTML = "Établissement de la connexion sécurisée";
-
-    setTimeout(function(){
-        detail.innerHTML = "Envoi des conclusions au Bureau du Directeur";
-    },1400);
-
-    setTimeout(function(){
-        texte.innerHTML = "RAPPORT REÇU";
-        detail.innerHTML = "Vérification de l'accusation...";
-    },3000);
-
-    setTimeout(function(){
-        texte.innerHTML = "ANALYSE EN COURS...";
-        detail.innerHTML = "BLACKWOOD ACADEMY · DOSSIER CONFIDENTIEL";
-    },4300);
-
-
-    /* VÉRIFICATION DU SUSPECT */
-
-    setTimeout(function(){
-
-        let reponse = champMeurtrier.value
-            .toLowerCase()
-            .trim()
-            .normalize("NFD")
-            .replace(/[\u0300-\u036f]/g, "");
-
-        let bonneReponse =
-            reponse.includes("ayden") ||
-            reponse.includes("aiden") ||
-            reponse.includes("zareck");
-
-        if(bonneReponse){
-
-            texte.innerHTML = "RAPPORT ACCEPTÉ";
-            texte.classList.add("accepted");
-
-            detail.innerHTML =
-                "Votre accusation a été confirmée.";
-
-        }else{
-
-            texte.innerHTML = "RAPPORT REJETÉ";
-            texte.classList.remove("accepted");
-
-            detail.innerHTML =
-                "Votre accusation ne correspond pas aux conclusions de l'enquête.";
-
-        }
-
-    },5800);
-
-}
-
 </script>
 </body>
 

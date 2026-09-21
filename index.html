@@ -928,6 +928,13 @@ function transmettreRapport(){
     const detail = document.getElementById("detailTransmission");
     const progression = document.getElementById("progressionTransmission");
 
+    const champMeurtrier = document.getElementById("meurtrier");
+
+    if(!champMeurtrier.value.trim()){
+        alert("Vous devez désigner un suspect avant de transmettre votre rapport.");
+        return;
+    }
+
     progression.style.animation = "none";
     progression.offsetHeight;
     progression.style.animation = "";
@@ -950,6 +957,42 @@ function transmettreRapport(){
         texte.innerHTML = "ANALYSE EN COURS...";
         detail.innerHTML = "BLACKWOOD ACADEMY · DOSSIER CONFIDENTIEL";
     },4300);
+
+
+    /* VÉRIFICATION DU SUSPECT */
+
+    setTimeout(function(){
+
+        let reponse = champMeurtrier.value
+            .toLowerCase()
+            .trim()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "");
+
+        let bonneReponse =
+            reponse.includes("ayden") ||
+            reponse.includes("aiden") ||
+            reponse.includes("zareck");
+
+        if(bonneReponse){
+
+            texte.innerHTML = "RAPPORT ACCEPTÉ";
+            texte.classList.add("accepted");
+
+            detail.innerHTML =
+                "Votre accusation a été confirmée.";
+
+        }else{
+
+            texte.innerHTML = "RAPPORT REJETÉ";
+            texte.classList.remove("accepted");
+
+            detail.innerHTML =
+                "Votre accusation ne correspond pas aux conclusions de l'enquête.";
+
+        }
+
+    },5800);
 
 }
 

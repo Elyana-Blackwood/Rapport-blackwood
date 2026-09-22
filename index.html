@@ -10,9 +10,9 @@
 
 <style>
 
-/* =========================================
+/* =====================================================
    BASE
-========================================= */
+===================================================== */
 
 *{
     margin:0;
@@ -24,21 +24,12 @@ body{
     width:100vw;
     height:100vh;
     overflow:hidden;
-
     background:#07101b;
-
     font-family:"Segoe UI",Arial,sans-serif;
-
     color:white;
 }
 
-
-/* =========================================
-   FOND BLACKWOOD
-========================================= */
-
 .background{
-
     position:fixed;
     inset:0;
 
@@ -46,50 +37,40 @@ body{
         radial-gradient(circle at 70% 30%, rgba(181,140,65,.12), transparent 35%),
         radial-gradient(circle at 20% 80%, rgba(29,55,80,.35), transparent 40%),
         linear-gradient(135deg,#07101b,#101d2b 55%,#060b12);
-
 }
 
 .background::after{
-
     content:"";
-
     position:absolute;
     inset:25px;
 
     border:1px solid rgba(201,166,92,.22);
 
     pointer-events:none;
-
 }
 
 
-/* =========================================
-   PAGE D'ACCUEIL
-========================================= */
+/* =====================================================
+   ACCUEIL
+===================================================== */
 
 .portal{
-
     position:relative;
-
     z-index:2;
 
     height:100vh;
 
     display:flex;
     flex-direction:column;
-
     justify-content:center;
     align-items:center;
 
     text-align:center;
 
     animation:apparition 1.8s ease;
-
 }
 
-
 @keyframes apparition{
-
     from{
         opacity:0;
         transform:scale(.98);
@@ -99,14 +80,9 @@ body{
         opacity:1;
         transform:scale(1);
     }
-
 }
 
-
-/* EMBLÈME */
-
 .emblem{
-
     width:92px;
     height:92px;
 
@@ -123,68 +99,50 @@ body{
     box-shadow:
         0 0 35px rgba(189,163,106,.12),
         inset 0 0 20px rgba(189,163,106,.06);
-
 }
 
 .emblem span{
-
     transform:rotate(-45deg);
 
     font-family:Georgia,serif;
-
     font-size:38px;
 
     color:#cbb47c;
-
 }
 
-
 .academy{
-
     font-family:Georgia,"Times New Roman",serif;
 
     font-size:13px;
-
     letter-spacing:7px;
 
     color:#bda36a;
 
     margin-bottom:15px;
-
 }
 
-
 h1{
-
     font-family:Georgia,"Times New Roman",serif;
 
     font-weight:normal;
 
     font-size:54px;
-
     letter-spacing:8px;
 
     margin-bottom:15px;
-
 }
 
-
 .separator{
-
     width:90px;
     height:1px;
 
     background:#bda36a;
 
     margin:15px auto 28px;
-
 }
 
-
 .subtitle{
-
     font-size:12px;
-
     letter-spacing:4px;
 
     color:#9ba8b4;
@@ -192,12 +150,9 @@ h1{
     text-transform:uppercase;
 
     margin-bottom:55px;
-
 }
 
-
 .enter{
-
     padding:16px 38px;
 
     border:1px solid #bda36a;
@@ -207,51 +162,40 @@ h1{
     color:#d2bd88;
 
     font-size:11px;
-
     letter-spacing:3px;
 
     cursor:pointer;
 
     transition:.4s;
-
 }
 
-
 .enter:hover{
-
     background:#bda36a;
 
     color:#07101b;
 
     box-shadow:
         0 0 35px rgba(189,163,106,.25);
-
 }
 
-
 .confidential{
-
     position:absolute;
 
     bottom:55px;
 
     font-size:9px;
-
     letter-spacing:3px;
 
     color:#53606c;
-
 }
 
 
-/* =========================================
+/* =====================================================
    AUTHENTIFICATION
-========================================= */
+===================================================== */
 
 .transition{
-
     position:fixed;
-
     inset:0;
 
     z-index:100;
@@ -260,43 +204,30 @@ h1{
         radial-gradient(circle at center,#122335 0%,#07101b 60%,#03070c 100%);
 
     display:flex;
-
-    align-items:center;
     justify-content:center;
+    align-items:center;
 
     opacity:0;
-
     visibility:hidden;
 
     transition:
         opacity .8s ease,
         visibility .8s;
-
 }
-
 
 .transition.active{
-
     opacity:1;
-
     visibility:visible;
-
 }
-
 
 .transition-content{
-
-    width:420px;
-
-    max-width:80vw;
-
     text-align:center;
 
+    width:420px;
+    max-width:80vw;
 }
 
-
 .mini-emblem{
-
     width:65px;
     height:65px;
 
@@ -307,18 +238,14 @@ h1{
     transform:rotate(45deg);
 
     display:flex;
-
     align-items:center;
     justify-content:center;
 
     box-shadow:
         0 0 35px rgba(189,163,106,.15);
-
 }
 
-
 .mini-emblem span{
-
     transform:rotate(-45deg);
 
     font-family:Georgia,serif;
@@ -326,102 +253,73 @@ h1{
     font-size:28px;
 
     color:#cbb47c;
-
 }
 
-
 .system-message{
-
     min-height:25px;
 
     font-size:11px;
-
     letter-spacing:4px;
 
     color:#9ba8b4;
 
     transition:.5s;
-
 }
 
-
 .system-message.accepted{
-
     color:#d4bd83;
 
     text-shadow:
         0 0 15px rgba(212,189,131,.35);
-
 }
 
-
 .loading-line{
-
     width:100%;
-
     height:1px;
-
-    margin-top:28px;
 
     background:rgba(189,163,106,.15);
 
-    overflow:hidden;
+    margin-top:28px;
 
+    overflow:hidden;
 }
 
-
 .loading-progress{
-
     width:0;
-
     height:100%;
 
     background:#bda36a;
-
 }
-
 
 .transition.active .loading-progress{
-
     animation:chargement 5.2s ease forwards;
-
 }
-
 
 @keyframes chargement{
 
     0%{width:0;}
-
     35%{width:34%;}
-
     65%{width:72%;}
-
     100%{width:100%;}
 
 }
 
-
 .security-code{
-
     margin-top:20px;
 
     font-size:8px;
-
     letter-spacing:3px;
 
     color:#44515d;
-
 }
 
 
-/* =========================================
+/* =====================================================
    RAPPORT
-========================================= */
+===================================================== */
 
 .rapport{
-
     position:fixed;
-
     inset:0;
 
     z-index:20;
@@ -433,20 +331,15 @@ h1{
     color:white;
 
     background:
-        radial-gradient(circle at 80% 20%, rgba(189,163,106,.08), transparent 30%),
+        radial-gradient(circle at 80% 20%,rgba(189,163,106,.08),transparent 30%),
         linear-gradient(135deg,#07101b,#101d2b 55%,#060b12);
-
 }
 
-
 .rapport.visible{
-
     display:block;
 
     animation:ouvrirRapport 1.2s ease both;
-
 }
-
 
 @keyframes ouvrirRapport{
 
@@ -462,102 +355,74 @@ h1{
 
 }
 
-
 .rapport-header{
-
     height:76px;
 
     border-bottom:1px solid rgba(189,163,106,.25);
 
     display:flex;
-
     align-items:center;
     justify-content:space-between;
 
     padding:0 7vw;
-
 }
 
-
 .rapport-marque{
-
     font-family:Georgia,serif;
 
     letter-spacing:5px;
-
     font-size:13px;
 
     color:#cbb47c;
-
 }
 
-
 .rapport-confidentiel{
-
     border:1px solid rgba(189,163,106,.45);
 
     padding:8px 14px;
 
     font-size:8px;
-
     letter-spacing:3px;
 
     color:#bda36a;
-
 }
 
-
 .rapport-contenu{
-
     width:min(900px,86vw);
 
     margin:75px auto 120px;
-
 }
 
-
 .rapport-reference{
-
     color:#687786;
 
     font-size:9px;
-
     letter-spacing:4px;
 
     margin-bottom:22px;
-
 }
 
-
 .rapport h2{
-
     font-family:Georgia,"Times New Roman",serif;
 
     font-weight:normal;
 
     font-size:48px;
-
     letter-spacing:4px;
 
     margin-bottom:22px;
-
 }
 
-
 .trait-or{
-
     width:70px;
     height:1px;
 
     background:#bda36a;
 
     margin-bottom:30px;
-
 }
 
-
 .rapport-intro{
-
     max-width:600px;
 
     color:#9ba8b4;
@@ -567,16 +432,14 @@ h1{
     font-size:15px;
 
     margin-bottom:65px;
-
 }
 
 
-/* =========================================
+/* =====================================================
    QUESTIONS
-========================================= */
+===================================================== */
 
 .question-bloc{
-
     display:grid;
 
     grid-template-columns:80px 1fr;
@@ -584,57 +447,41 @@ h1{
     padding:35px 0;
 
     border-top:1px solid rgba(189,163,106,.18);
-
 }
-
 
 .question-bloc:last-of-type{
-
     border-bottom:1px solid rgba(189,163,106,.18);
-
 }
 
-
 .numero-question{
-
     font-family:Georgia,serif;
 
     font-size:32px;
 
     color:rgba(189,163,106,.45);
-
 }
 
-
 .question-contenu label{
-
     display:block;
 
     color:#d0b97e;
 
     letter-spacing:3px;
-
     font-size:11px;
 
     margin-bottom:15px;
-
 }
 
-
 .question-contenu p{
-
     color:#9ba8b4;
 
     font-size:14px;
 
     margin-bottom:25px;
-
 }
-
 
 .question-contenu input,
 .question-contenu textarea{
-
     width:100%;
 
     padding:17px 18px;
@@ -652,84 +499,63 @@ h1{
     font-size:15px;
 
     transition:.3s;
-
 }
 
-
 .question-contenu textarea{
-
     min-height:115px;
 
     line-height:1.6;
 
     resize:vertical;
-
 }
-
 
 .question-contenu input:focus,
 .question-contenu textarea:focus{
-
     border-color:#bda36a;
 
     box-shadow:
         0 0 25px rgba(189,163,106,.10);
-
 }
-
 
 .question-contenu input::placeholder,
 .question-contenu textarea::placeholder{
-
     color:#53606c;
-
 }
 
 
-/* =========================================
-   BOUTON FINAL
-========================================= */
+/* =====================================================
+   TRANSMISSION
+===================================================== */
 
 .transmission-rapport{
-
     margin-top:85px;
 
     padding:55px 0 50px;
 
     text-align:center;
-
 }
 
-
 .transmission-ligne{
-
     width:55px;
     height:1px;
 
     background:#bda36a;
 
     margin:0 auto 30px;
-
 }
 
-
 .transmission-titre{
-
     font-family:Georgia,"Times New Roman",serif;
 
     color:#cbb47c;
 
     font-size:12px;
-
     letter-spacing:4px;
 
     margin-bottom:20px;
-
 }
 
-
 .transmission-rapport p{
-
     max-width:520px;
 
     margin:0 auto 35px;
@@ -739,12 +565,9 @@ h1{
     font-size:13px;
 
     line-height:1.7;
-
 }
 
-
 .bouton-transmettre{
-
     padding:18px 42px;
 
     border:1px solid #bda36a;
@@ -754,43 +577,32 @@ h1{
     color:#d2bd88;
 
     font-size:11px;
-
     letter-spacing:3px;
 
     cursor:pointer;
 
     transition:.4s;
-
 }
 
-
 .bouton-transmettre:hover{
-
     background:#bda36a;
 
     color:#07101b;
 
     box-shadow:
         0 0 40px rgba(189,163,106,.25);
-
 }
 
-
 .transmission-securisee{
-
     margin-top:25px;
 
     color:#46535f;
 
     font-size:8px;
-
     letter-spacing:3px;
-
 }
 
-
 .erreur-rapport{
-
     display:none;
 
     margin-top:25px;
@@ -798,20 +610,16 @@ h1{
     color:#a97575;
 
     font-size:11px;
-
     letter-spacing:2px;
-
 }
 
 
-/* =========================================
+/* =====================================================
    ÉCRAN DE TRANSMISSION
-========================================= */
+===================================================== */
 
 .ecran-transmission{
-
     position:fixed;
-
     inset:0;
 
     z-index:500;
@@ -820,7 +628,6 @@ h1{
         radial-gradient(circle at center,#122335 0%,#07101b 58%,#03070c 100%);
 
     display:flex;
-
     align-items:center;
     justify-content:center;
 
@@ -829,112 +636,73 @@ h1{
     overflow-y:auto;
 
     opacity:0;
-
     visibility:hidden;
 
     transition:
         opacity .7s ease,
         visibility .7s;
-
 }
-
 
 .ecran-transmission.visible{
-
     opacity:1;
-
     visibility:visible;
-
 }
 
-
 .transmission-centre{
-
     width:min(750px,90vw);
 
     margin:auto;
 
     text-align:center;
-
 }
 
-
 .bloc-analyse{
-
     transition:
         opacity .7s ease,
         transform .7s ease;
-
 }
 
-
 .bloc-analyse.disparition{
-
     opacity:0;
 
     transform:translateY(-15px);
-
 }
-
-
-.transmission-emblem{
-
-    margin-bottom:42px;
-
-}
-
 
 .transmission-reference{
-
     font-size:8px;
-
     letter-spacing:4px;
 
     color:#52606d;
 
     margin-bottom:28px;
-
 }
 
-
 .texte-transmission{
-
     min-height:35px;
 
     font-family:Georgia,"Times New Roman",serif;
 
     font-size:24px;
-
     letter-spacing:4px;
 
     color:#d1bb82;
 
     text-align:center;
-
 }
 
-
 .texte-transmission.accepted{
-
     color:#d6bf82;
 
     text-shadow:
         0 0 22px rgba(214,191,130,.30);
-
 }
-
 
 .texte-transmission.rejected{
-
     color:#a97575;
-
 }
 
-
 .barre-transmission{
-
     width:100%;
-
     max-width:520px;
 
     height:1px;
@@ -944,12 +712,9 @@ h1{
     background:rgba(189,163,106,.18);
 
     overflow:hidden;
-
 }
 
-
 .progression-transmission{
-
     width:0;
 
     height:100%;
@@ -958,51 +723,37 @@ h1{
 
     box-shadow:
         0 0 18px rgba(189,163,106,.45);
-
 }
-
 
 .ecran-transmission.visible .progression-transmission{
-
     animation:progressionRapport 5s ease forwards;
-
 }
-
 
 @keyframes progressionRapport{
 
     0%{width:0;}
-
     25%{width:20%;}
-
     55%{width:52%;}
-
     78%{width:78%;}
-
     100%{width:100%;}
 
 }
 
-
 .detail-transmission{
-
-    font-size:9px;
-
-    letter-spacing:2px;
+    min-height:20px;
 
     color:#65727e;
 
-    min-height:20px;
-
+    font-size:9px;
+    letter-spacing:2px;
 }
 
 
-/* =========================================
+/* =====================================================
    QR CODE
-========================================= */
+===================================================== */
 
 .zone-qr{
-
     display:none;
 
     opacity:0;
@@ -1010,42 +761,46 @@ h1{
     text-align:center;
 
     transform:scale(.96);
-
 }
 
-
 .zone-qr.visible{
-
     display:block;
 
     animation:apparitionQR 1.3s ease forwards;
-
 }
 
+.zone-qr.disparition{
+    animation:disparitionQR .8s ease forwards;
+}
 
 @keyframes apparitionQR{
 
     from{
-
         opacity:0;
-
         transform:scale(.96) translateY(15px);
-
     }
 
     to{
-
         opacity:1;
-
         transform:scale(1) translateY(0);
-
     }
 
 }
 
+@keyframes disparitionQR{
+
+    from{
+        opacity:1;
+    }
+
+    to{
+        opacity:0;
+        transform:scale(.98);
+    }
+
+}
 
 .instruction-qr{
-
     font-family:Georgia,"Times New Roman",serif;
 
     font-size:18px;
@@ -1055,16 +810,24 @@ h1{
     color:#d6bf82;
 
     margin-bottom:35px;
-
-    letter-spacing:1px;
-
 }
 
+.garder-ouvert{
+    display:block;
 
-/* QR TEMPORAIRE */
+    margin-top:17px;
+
+    font-family:"Segoe UI",Arial,sans-serif;
+
+    font-size:10px;
+    letter-spacing:2px;
+
+    line-height:1.8;
+
+    color:#71808d;
+}
 
 .qr-cadre{
-
     width:270px;
     height:270px;
 
@@ -1079,36 +842,299 @@ h1{
     box-shadow:
         0 0 55px rgba(189,163,106,.18),
         0 25px 70px rgba(0,0,0,.45);
-
 }
 
-
 .qr-placeholder{
-
     width:100%;
     height:100%;
 
     background-color:#eee9dd;
 
     background-image:
-
-        linear-gradient(90deg,#101820 20%,transparent 20%,transparent 40%,#101820 40%,#101820 60%,transparent 60%,transparent 80%,#101820 80%),
-
-        linear-gradient(#101820 20%,transparent 20%,transparent 40%,#101820 40%,#101820 60%,transparent 60%,transparent 80%,#101820 80%);
+        linear-gradient(
+            90deg,
+            #101820 20%,
+            transparent 20%,
+            transparent 40%,
+            #101820 40%,
+            #101820 60%,
+            transparent 60%,
+            transparent 80%,
+            #101820 80%
+        ),
+        linear-gradient(
+            #101820 20%,
+            transparent 20%,
+            transparent 40%,
+            #101820 40%,
+            #101820 60%,
+            transparent 60%,
+            transparent 80%,
+            #101820 80%
+        );
 
     background-size:38px 38px;
 
     border:10px solid #101820;
-
 }
 
 
-/* =========================================
-   RAPPORT REJETÉ
-========================================= */
+/* =====================================================
+   IMPRESSION DE LA LETTRE
+===================================================== */
+
+.zone-impression{
+    display:none;
+
+    width:100%;
+
+    opacity:0;
+}
+
+.zone-impression.visible{
+    display:block;
+
+    animation:apparitionImpression 1s ease forwards;
+}
+
+@keyframes apparitionImpression{
+
+    from{
+        opacity:0;
+    }
+
+    to{
+        opacity:1;
+    }
+
+}
+
+.impression-reference{
+    color:#52606d;
+
+    font-size:8px;
+    letter-spacing:4px;
+
+    margin-bottom:20px;
+}
+
+.impression-titre{
+    font-family:Georgia,"Times New Roman",serif;
+
+    color:#d6bf82;
+
+    font-size:22px;
+    letter-spacing:4px;
+
+    margin-bottom:35px;
+}
+
+.imprimante{
+    position:relative;
+
+    width:min(600px,90vw);
+
+    margin:0 auto;
+
+    padding-top:30px;
+}
+
+.imprimante-corps{
+    position:relative;
+
+    z-index:5;
+
+    width:100%;
+    height:72px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border:1px solid rgba(189,163,106,.55);
+
+    background:
+        linear-gradient(
+            180deg,
+            #172432,
+            #09121c
+        );
+
+    box-shadow:
+        0 15px 45px rgba(0,0,0,.45);
+}
+
+.imprimante-nom{
+    font-family:Georgia,"Times New Roman",serif;
+
+    color:#bda36a;
+
+    font-size:10px;
+    letter-spacing:4px;
+}
+
+.voyant{
+    position:absolute;
+
+    right:25px;
+
+    width:7px;
+    height:7px;
+
+    border-radius:50%;
+
+    background:#bda36a;
+
+    box-shadow:
+        0 0 12px rgba(189,163,106,.8);
+
+    animation:voyant 1s infinite;
+}
+
+@keyframes voyant{
+
+    0%,100%{
+        opacity:.35;
+    }
+
+    50%{
+        opacity:1;
+    }
+
+}
+
+.fente{
+    position:absolute;
+
+    left:8%;
+    bottom:-5px;
+
+    width:84%;
+    height:9px;
+
+    background:#02060a;
+
+    box-shadow:
+        inset 0 0 7px rgba(0,0,0,.9);
+}
+
+
+/* CONTENEUR DE LA LETTRE */
+
+.sortie-lettre{
+    position:relative;
+
+    width:min(560px,84vw);
+
+    margin:0 auto;
+
+    padding-top:0;
+
+    overflow:hidden;
+}
+
+.lettre-feuille{
+    position:relative;
+
+    width:100%;
+
+    background:#f3efe6;
+
+    color:#1d2024;
+
+    box-shadow:
+        0 20px 55px rgba(0,0,0,.48);
+
+    clip-path:inset(0 0 100% 0);
+}
+
+.lettre-feuille.impression{
+    animation:impressionLettre 12s linear forwards;
+}
+
+@keyframes impressionLettre{
+
+    0%{
+        clip-path:inset(0 0 100% 0);
+        transform:translateY(-20px);
+    }
+
+    100%{
+        clip-path:inset(0 0 0 0);
+        transform:translateY(0);
+    }
+
+}
+
+.lettre-image{
+    display:block;
+
+    width:100%;
+    height:auto;
+}
+
+.lettre-placeholder{
+    display:none;
+
+    padding:80px 45px;
+
+    min-height:650px;
+
+    background:#f3efe6;
+
+    color:#20242a;
+
+    font-family:Georgia,"Times New Roman",serif;
+}
+
+.lettre-placeholder h3{
+    letter-spacing:3px;
+
+    margin-bottom:45px;
+}
+
+.lettre-placeholder p{
+    line-height:1.9;
+
+    color:#34383c;
+}
+
+.etat-impression{
+    margin-top:30px;
+
+    min-height:25px;
+
+    color:#75828e;
+
+    font-size:9px;
+    letter-spacing:3px;
+}
+
+.document-recu{
+    opacity:0;
+
+    margin-top:20px;
+
+    color:#cbb47c;
+
+    font-family:Georgia,"Times New Roman",serif;
+
+    font-size:12px;
+    letter-spacing:4px;
+
+    transition:opacity 1s ease;
+}
+
+.document-recu.visible{
+    opacity:1;
+}
+
+
+/* =====================================================
+   MAUVAISE RÉPONSE
+===================================================== */
 
 .retour-rapport{
-
     display:none;
 
     margin:35px auto 0;
@@ -1122,104 +1148,71 @@ h1{
     color:#cbb47c;
 
     font-size:10px;
-
     letter-spacing:3px;
 
     cursor:pointer;
 
     transition:.3s;
-
 }
-
 
 .retour-rapport.visible{
-
     display:block;
-
 }
 
-
 .retour-rapport:hover{
-
     background:#bda36a;
 
     color:#07101b;
-
 }
 
 
-/* =========================================
+/* =====================================================
    MOBILE
-========================================= */
+===================================================== */
 
 @media(max-width:700px){
 
     h1{
-
         font-size:34px;
-
         letter-spacing:5px;
-
     }
-
 
     .academy{
-
         letter-spacing:4px;
-
     }
-
 
     .question-bloc{
-
         grid-template-columns:45px 1fr;
-
     }
-
 
     .numero-question{
-
         font-size:24px;
-
     }
-
 
     .rapport h2{
-
         font-size:36px;
-
     }
-
 
     .rapport-header{
-
         padding:0 5vw;
-
     }
-
 
     .rapport-marque{
-
         font-size:10px;
-
         letter-spacing:3px;
-
     }
-
 
     .instruction-qr{
-
         font-size:16px;
-
     }
 
-
     .qr-cadre{
-
         width:230px;
-
         height:230px;
+    }
 
+    .impression-titre{
+        font-size:17px;
     }
 
 }
@@ -1231,13 +1224,12 @@ h1{
 
 <body>
 
-
 <div class="background"></div>
 
 
-<!-- =====================================
+<!-- =====================================================
      ACCUEIL
-===================================== -->
+===================================================== -->
 
 <main class="portal">
 
@@ -1249,7 +1241,9 @@ h1{
         BLACKWOOD ACADEMY
     </div>
 
-    <h1>RAPPORT FINAL</h1>
+    <h1>
+        RAPPORT FINAL
+    </h1>
 
     <div class="separator"></div>
 
@@ -1257,7 +1251,10 @@ h1{
         Bureau du Directeur des Admissions
     </div>
 
-    <button class="enter" onclick="accederDossier()">
+    <button
+        class="enter"
+        onclick="accederDossier()"
+    >
         ACCÉDER AU DOSSIER
     </button>
 
@@ -1268,12 +1265,14 @@ h1{
 </main>
 
 
+<!-- =====================================================
+     RAPPORT
+===================================================== -->
 
-<!-- =====================================
-     RAPPORT D'ENQUÊTE
-===================================== -->
-
-<section id="rapport" class="rapport">
+<section
+    id="rapport"
+    class="rapport"
+>
 
     <div class="rapport-header">
 
@@ -1294,7 +1293,9 @@ h1{
             BUREAU DU DIRECTEUR DES ADMISSIONS · DOSSIER FINAL
         </div>
 
-        <h2>Rapport d'enquête</h2>
+        <h2>
+            Rapport d'enquête
+        </h2>
 
         <div class="trait-or"></div>
 
@@ -1304,7 +1305,7 @@ h1{
         </p>
 
 
-        <!-- QUESTION 01 -->
+        <!-- 01 -->
 
         <div class="question-bloc">
 
@@ -1334,7 +1335,7 @@ h1{
         </div>
 
 
-        <!-- QUESTION 02 -->
+        <!-- 02 -->
 
         <div class="question-bloc">
 
@@ -1364,7 +1365,7 @@ h1{
         </div>
 
 
-        <!-- QUESTION 03 -->
+        <!-- 03 -->
 
         <div class="question-bloc">
 
@@ -1393,7 +1394,7 @@ h1{
         </div>
 
 
-        <!-- QUESTION 04 -->
+        <!-- 04 -->
 
         <div class="question-bloc">
 
@@ -1422,7 +1423,7 @@ h1{
         </div>
 
 
-        <!-- TRANSMISSION -->
+        <!-- BOUTON FINAL -->
 
         <div class="transmission-rapport">
 
@@ -1443,7 +1444,10 @@ h1{
                 TRANSMETTRE LE RAPPORT
             </button>
 
-            <div id="erreurRapport" class="erreur-rapport">
+            <div
+                id="erreurRapport"
+                class="erreur-rapport"
+            >
                 VOUS DEVEZ DÉSIGNER UN SUSPECT AVANT LA TRANSMISSION
             </div>
 
@@ -1458,18 +1462,22 @@ h1{
 </section>
 
 
-
-<!-- =====================================
+<!-- =====================================================
      AUTHENTIFICATION
-===================================== -->
+===================================================== -->
 
-<div id="transition" class="transition">
+<div
+    id="transition"
+    class="transition"
+>
 
     <div class="transition-content">
 
         <div class="mini-emblem">
 
-            <span>B</span>
+            <span>
+                B
+            </span>
 
         </div>
 
@@ -1495,10 +1503,9 @@ h1{
 </div>
 
 
-
-<!-- =====================================
-     ÉCRAN TRANSMISSION / RÉSULTAT
-===================================== -->
+<!-- =====================================================
+     TRANSMISSION / RÉSULTAT / QR / LETTRE
+===================================================== -->
 
 <div
     id="ecranTransmission"
@@ -1515,16 +1522,16 @@ h1{
             class="bloc-analyse"
         >
 
-            <div class="mini-emblem transmission-emblem">
+            <div class="mini-emblem">
 
-                <span>B</span>
+                <span>
+                    B
+                </span>
 
             </div>
 
             <div class="transmission-reference">
-
                 BLACKWOOD ACADEMY · SECURE NETWORK
-
             </div>
 
             <div
@@ -1561,7 +1568,7 @@ h1{
         </div>
 
 
-        <!-- QR -->
+        <!-- QR CODE -->
 
         <div
             id="zoneQR"
@@ -1569,19 +1576,118 @@ h1{
         >
 
             <p class="instruction-qr">
+
                 Merci de scanner ce QR code pour poursuivre.
+
+                <span class="garder-ouvert">
+
+                    Veuillez garder cet ordinateur allumé
+                    et cette page ouverte jusqu'à la fin
+                    de la transmission.
+
+                </span>
+
             </p>
 
             <div class="qr-cadre">
 
-                <!--
-                    QR TEMPORAIRE.
-                    Plus tard, on remplacera ce bloc
-                    par ton véritable QR code.
-                -->
+                <!-- QR TEMPORAIRE -->
 
                 <div class="qr-placeholder"></div>
 
+            </div>
+
+        </div>
+
+
+        <!-- IMPRESSION -->
+
+        <div
+            id="zoneImpression"
+            class="zone-impression"
+        >
+
+            <div class="impression-reference">
+                BLACKWOOD ACADEMY · SECURE DOCUMENT SYSTEM
+            </div>
+
+            <div class="impression-titre">
+                RÉCEPTION D'UN DOCUMENT...
+            </div>
+
+            <div class="imprimante">
+
+                <div class="imprimante-corps">
+
+                    <div class="imprimante-nom">
+                        BLACKWOOD NETWORK PRINTER
+                    </div>
+
+                    <div class="voyant"></div>
+
+                    <div class="fente"></div>
+
+                </div>
+
+
+                <div class="sortie-lettre">
+
+                    <div
+                        id="lettreFeuille"
+                        class="lettre-feuille"
+                    >
+
+                        <img
+                            src="images/lettre-admission.png"
+                            class="lettre-image"
+                            alt="Lettre Blackwood"
+                            onerror="
+                                this.style.display='none';
+                                document.getElementById('lettrePlaceholder').style.display='block';
+                            "
+                        >
+
+                        <div
+                            id="lettrePlaceholder"
+                            class="lettre-placeholder"
+                        >
+
+                            <h3>
+                                BLACKWOOD ACADEMY
+                            </h3>
+
+                            <p>
+                                La lettre d'admission apparaîtra ici.
+                                <br><br>
+                                Ajoutez simplement votre image dans le dossier
+                                <strong>images</strong> sous le nom
+                                <strong>lettre-admission.png</strong>.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="etatImpression"
+                class="etat-impression"
+            >
+                Impression en cours...
+            </div>
+
+
+            <div
+                id="documentRecu"
+                class="document-recu"
+            >
+                DOCUMENT REÇU
+                <br><br>
+                BLACKWOOD ACADEMY · ADMISSIONS OFFICE
             </div>
 
         </div>
@@ -1592,12 +1698,35 @@ h1{
 </div>
 
 
-
 <script>
 
-/* =========================================
+/* =====================================================
+   PARAMÈTRES
+===================================================== */
+
+
+/*
+   75 000 millisecondes =
+   1 minute 15 secondes
+*/
+
+const DELAI_LETTRE = 75000;
+
+
+/*
+   Durée de l'impression :
+   12 secondes
+*/
+
+const DUREE_IMPRESSION = 12000;
+
+
+let timerLettre = null;
+
+
+/* =====================================================
    OUVERTURE DU DOSSIER
-========================================= */
+===================================================== */
 
 function accederDossier(){
 
@@ -1652,10 +1781,9 @@ function accederDossier(){
 }
 
 
-
-/* =========================================
-   TRANSMISSION DU RAPPORT
-========================================= */
+/* =====================================================
+   TRANSMISSION
+===================================================== */
 
 function transmettreRapport(){
 
@@ -1680,49 +1808,103 @@ function transmettreRapport(){
     const zoneQR =
         document.getElementById("zoneQR");
 
+    const zoneImpression =
+        document.getElementById("zoneImpression");
+
     const boutonRetour =
         document.getElementById("boutonRetour");
 
     const erreur =
         document.getElementById("erreurRapport");
 
+    const lettre =
+        document.getElementById("lettreFeuille");
 
-    /* SUSPECT OBLIGATOIRE */
+    const documentRecu =
+        document.getElementById("documentRecu");
+
+    const etatImpression =
+        document.getElementById("etatImpression");
+
+
+    /* LE SUSPECT EST OBLIGATOIRE */
 
     if(!champMeurtrier.value.trim()){
 
-        erreur.style.display = "block";
+        erreur.style.display =
+            "block";
 
         return;
 
     }
 
 
-    erreur.style.display = "none";
+    erreur.style.display =
+        "none";
+
+
+    /* ANNULER UN ANCIEN TIMER */
+
+    if(timerLettre){
+
+        clearTimeout(timerLettre);
+
+        timerLettre = null;
+
+    }
 
 
     /* REMISE À ZÉRO */
 
-    blocAnalyse.style.display = "block";
+    blocAnalyse.style.display =
+        "block";
 
-    blocAnalyse.classList.remove("disparition");
+    blocAnalyse.classList.remove(
+        "disparition"
+    );
 
-    zoneQR.classList.remove("visible");
+    zoneQR.classList.remove(
+        "visible",
+        "disparition"
+    );
 
-    boutonRetour.classList.remove("visible");
+    zoneImpression.classList.remove(
+        "visible"
+    );
 
-    texte.classList.remove("accepted");
-    texte.classList.remove("rejected");
+    boutonRetour.classList.remove(
+        "visible"
+    );
+
+    texte.classList.remove(
+        "accepted",
+        "rejected"
+    );
+
+    lettre.classList.remove(
+        "impression"
+    );
+
+    documentRecu.classList.remove(
+        "visible"
+    );
+
+    etatImpression.innerHTML =
+        "Impression en cours...";
 
 
-    progression.style.animation = "none";
+    progression.style.animation =
+        "none";
 
     progression.offsetHeight;
 
-    progression.style.animation = "";
+    progression.style.animation =
+        "";
 
 
-    ecran.classList.add("visible");
+    ecran.classList.add(
+        "visible"
+    );
 
 
     texte.innerHTML =
@@ -1732,7 +1914,7 @@ function transmettreRapport(){
         "Établissement de la connexion sécurisée";
 
 
-    /* ÉTAPE 1 */
+    /* TRANSMISSION */
 
     setTimeout(function(){
 
@@ -1741,8 +1923,6 @@ function transmettreRapport(){
 
     },1400);
 
-
-    /* ÉTAPE 2 */
 
     setTimeout(function(){
 
@@ -1755,8 +1935,6 @@ function transmettreRapport(){
     },3000);
 
 
-    /* ÉTAPE 3 */
-
     setTimeout(function(){
 
         texte.innerHTML =
@@ -1768,7 +1946,7 @@ function transmettreRapport(){
     },4300);
 
 
-    /* ÉTAPE 4 : VÉRIFICATION */
+    /* VÉRIFICATION */
 
     setTimeout(function(){
 
@@ -1789,25 +1967,22 @@ function transmettreRapport(){
             reponse.includes("zareck");
 
 
-        /* =========================
-           BONNE RÉPONSE
-        ========================= */
+        /* BONNE RÉPONSE */
 
         if(bonneReponse){
 
             texte.innerHTML =
                 "RAPPORT ACCEPTÉ";
 
-            texte.classList.add("accepted");
+            texte.classList.add(
+                "accepted"
+            );
 
             detail.innerHTML =
                 "ACCUSATION CONFIRMÉE";
 
 
-            /*
-               ON LAISSE RAPPORT ACCEPTÉ
-               À L'ÉCRAN 2 SECONDES
-            */
+            /* ATTENTE DE 2 SECONDES */
 
             setTimeout(function(){
 
@@ -1818,10 +1993,7 @@ function transmettreRapport(){
             },2000);
 
 
-            /*
-               ENSUITE TOUT DISPARAÎT
-               ET LE QR ARRIVE
-            */
+            /* QR CODE */
 
             setTimeout(function(){
 
@@ -1832,21 +2004,33 @@ function transmettreRapport(){
                     "visible"
                 );
 
+
+                /*
+                   LE COMPTE À REBOURS DE
+                   1 MINUTE 15 COMMENCE ICI
+                */
+
+                timerLettre =
+                    setTimeout(
+                        lancerImpression,
+                        DELAI_LETTRE
+                    );
+
             },2700);
 
         }
 
 
-        /* =========================
-           MAUVAISE RÉPONSE
-        ========================= */
+        /* MAUVAISE RÉPONSE */
 
         else{
 
             texte.innerHTML =
                 "RAPPORT REJETÉ";
 
-            texte.classList.add("rejected");
+            texte.classList.add(
+                "rejected"
+            );
 
             detail.innerHTML =
                 "Les éléments transmis ne permettent pas de confirmer votre accusation.";
@@ -1857,16 +2041,89 @@ function transmettreRapport(){
 
         }
 
-
     },5800);
 
 }
 
 
+/* =====================================================
+   LANCEMENT DE L'IMPRESSION
+===================================================== */
 
-/* =========================================
-   RETOUR SI MAUVAISE RÉPONSE
-========================================= */
+function lancerImpression(){
+
+    const zoneQR =
+        document.getElementById("zoneQR");
+
+    const zoneImpression =
+        document.getElementById("zoneImpression");
+
+    const lettre =
+        document.getElementById("lettreFeuille");
+
+    const documentRecu =
+        document.getElementById("documentRecu");
+
+    const etatImpression =
+        document.getElementById("etatImpression");
+
+
+    /* LE QR S'EFFACE */
+
+    zoneQR.classList.add(
+        "disparition"
+    );
+
+
+    /* APPARITION DE L'IMPRIMANTE */
+
+    setTimeout(function(){
+
+        zoneQR.style.display =
+            "none";
+
+        zoneImpression.classList.add(
+            "visible"
+        );
+
+
+        /*
+           PETITE ATTENTE POUR LAISSER
+           APPARAÎTRE L'IMPRIMANTE
+        */
+
+        setTimeout(function(){
+
+            lettre.classList.add(
+                "impression"
+            );
+
+        },1800);
+
+
+        /*
+           FIN DE L'IMPRESSION
+        */
+
+        setTimeout(function(){
+
+            etatImpression.innerHTML =
+                "Impression terminée.";
+
+            documentRecu.classList.add(
+                "visible"
+            );
+
+        },1800 + DUREE_IMPRESSION);
+
+    },800);
+
+}
+
+
+/* =====================================================
+   RETOUR APRÈS MAUVAISE RÉPONSE
+===================================================== */
 
 function retourAuRapport(){
 
@@ -1880,11 +2137,17 @@ function retourAuRapport(){
         document.getElementById("boutonRetour");
 
 
-    ecran.classList.remove("visible");
+    ecran.classList.remove(
+        "visible"
+    );
 
-    boutonRetour.classList.remove("visible");
+    boutonRetour.classList.remove(
+        "visible"
+    );
 
-    texte.classList.remove("rejected");
+    texte.classList.remove(
+        "rejected"
+    );
 
 }
 

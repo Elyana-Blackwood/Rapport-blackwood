@@ -1021,6 +1021,8 @@ h1{
 
 /* CONTENEUR DE LA LETTRE */
 
+/* ZONE DE SORTIE DE LA FEUILLE */
+
 .sortie-lettre{
     position:relative;
 
@@ -1028,10 +1030,11 @@ h1{
 
     margin:0 auto;
 
-    padding-top:0;
-
     overflow:hidden;
 }
+
+
+/* FEUILLE */
 
 .lettre-feuille{
     position:relative;
@@ -1045,27 +1048,45 @@ h1{
     box-shadow:
         0 20px 55px rgba(0,0,0,.48);
 
-    clip-path:inset(0 0 100% 0);
+    /*
+       La feuille est cachée AU-DESSUS.
+       Seul son bord inférieur commence
+       à apparaître sous l'imprimante.
+    */
+
+    transform:
+        translateY(calc(-100% + 12px));
 }
 
+
+/* LANCEMENT DE L'IMPRESSION */
+
 .lettre-feuille.impression{
-    animation:impressionLettre 12s linear forwards;
+
+    animation:
+        impressionLettre 12s linear forwards;
 }
+
+
+/* LE BAS SORT EN PREMIER */
 
 @keyframes impressionLettre{
 
     0%{
-        clip-path:inset(0 0 100% 0);
-        transform:translateY(-20px);
+
+        transform:
+            translateY(calc(-100% + 12px));
+
     }
 
     100%{
-        clip-path:inset(0 0 0 0);
-        transform:translateY(0);
+
+        transform:
+            translateY(0);
+
     }
 
 }
-
 .lettre-image{
     display:block;
 
